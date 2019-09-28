@@ -13,11 +13,15 @@ Olympic Math, taught by Fengyang Wang.
 
 ## Lecture 1 (September 28, 2019)
 
-We discussed what a mathematical object is and talked about variables. We then introduced
-fractions and reviewed various operations on them.
+We reviewed the integers (including negative numbers) and introduced variables. We then
+covered fractions using this new vocabulary and reviewed various operations on them.
 
 The [homework](assets/homework/rational-numbers.pdf) and
-[solutions](assets/solutions/rational-numbers.pdf) are available.
+[answers](assets/solutions/rational-numbers.pdf) are available.
+
+If you would like more practice with fraction arithmetic, check out [Khan
+Academy](https://www.khanacademy.org/math/arithmetic/fraction-arithmetic). Don’t worry if
+the variables don’t make sense yet — we will continue to practice them in future lectures.
 
 ## Contact
 
