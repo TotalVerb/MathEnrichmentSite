@@ -84,7 +84,7 @@ body { counter-reset: eqnum; }
     BOXES
 ================================================================== */
 
-.jd-content .colbox-blue, .jd-content .problem, .jd-content .solution {
+.jd-content .colbox-blue, .jd-content .problem, .jd-content .solution, .jd-content .theorem {
     background-color: #EEF3F5;
     padding-top: 5px;
     padding-right: 10px;
@@ -92,13 +92,22 @@ body { counter-reset: eqnum; }
     padding-bottom: 5px;
     margin-left: 5px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     border-radius: 0 10px 10px 0;
     border-left: 5px solid #4C9CF1; }
 
+.jd-content .theorem {
+    background-color: #FFCACA;
+    border-left: 5px solid #804040;
+}
+
 .jd-content .problem {
-    background-color: #FFF0E0;
-    border-left: 5px solid #8CD18C; }
+    background-color: #FFFFEE;
+    border-left: 5px solid #4CF19C;
+}
+
+.jd-content .solution {
+    margin-top: -15px;
 }
 
 .jd-content .framebox {

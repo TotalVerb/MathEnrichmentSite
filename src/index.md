@@ -9,7 +9,8 @@ where appropriate -->
 # Class Website
 
 This is the class website for the Grand River Chinese School interest class on Grade 7/8
-Olympic Math, taught by Fengyang Wang.
+Olympic Math, taught by [Fengyang Wang](https://wafy.me/). The teaching assistant for this
+class is [Eric Xiao](https://mathlord2.github.io/).
 
 ## Lecture 1 (September 28, 2019)
 

@@ -10,7 +10,9 @@ invited to guide and discuss topics with their students.
 
 \tableofcontents
 
-## Review: The Integers
+## Fundamentals
+
+### The Integers
 
 The first kinds of numbers discovered were the natural numbers: \[ 0, 1, 2, 3, 4, 5, 6, 7,
 8, 9, 10, \dots \]
@@ -61,7 +63,31 @@ But in addition, we have a third closure property, which enables us to describe 
 
 - The difference of any two integers is again an integer.
 
-## Introduction to Variables
+@@problem
+
+#### Exercise 1: Arithmetic with Integers
+
+Evaluate each of the following expressions:
+
+1. $1 + (-1) =$
+2. $-1 - (-2) =$
+3. $-3 \times 4 =$
+4. $(-4) \times (-10) =$
+
+@@
+
+@@solution
+
+##### Solution
+
+1. $1 + (-1) = \boxed{0}$
+2. $-1 - (-2) = \boxed{1}$
+3. $-3 \times 4 = \boxed{-12}$
+4. $(-4) \times (-10) = \boxed{40}$
+
+@@
+
+### Variables
 
 When we first learn arithmetic, we only have to worry about natural numbers. As we continue
 to develop new techniques, we find new kinds of numbers — like the integers mentioned above.
@@ -95,7 +121,7 @@ For instance, a real world problem is as follows:
 
 @@problem
 
-### Exercise 1: More Lumber Is Required
+#### Exercise 2: More Lumber Is Required
 
 Yahui and Zhen want to build a wooden treehouse. $100$ planks are required. Yahui has $33$
 in her shed, and Zhen has $25$ in his shed. How many additional planks must they buy to
@@ -105,7 +131,7 @@ complete the treehouse?
 
 @@solution
 
-#### Solution
+##### Solution
 
 We can use whole numbers to model this problem. First, let’s give names (variables) to all
 mathematical objects (numbers) that the problem gives us or requests that we find. Let $y$
@@ -127,19 +153,25 @@ subtraction. That is, \[
   x = 100 - 58 = \boxed{42}
 \]
 
+Another way to understand what we have done in the above step is that $58 + x$ and $100$
+refer to the same mathematical object, $100$. Therefore, we can subtract $58$ from both of
+them, and they will still be different names for the same object. That is, $58 + x - 58 =
+100 - 58$. By using the properties of addition that we are familiar with, the left hand side
+is just another name for $x$ — and so we obtain the result seen above.
+
 @@
 
 In this example, all of the variables we used represent specific mathematical objects. Three
 of them were immediately given to us in the question. The other, $x$, still represented a
 specific mathematical object, but we had to figure it out.
 
-It is not always the case that variables represent specific mathematical objects ---
+It is not always the case that variables represent specific mathematical objects —
 sometimes, we can attach a **quantifier** to a variable, to say that a statement is true of
 all mathematical objects of a certain type at once.
 
 @@problem
 
-### Exercise 2: Properties of Whole Number Addition
+#### Exercise 3: Properties of Whole Number Addition
 
 Give a concrete example for each of the following properties of addition of whole numbers:
 
@@ -151,7 +183,7 @@ Give a concrete example for each of the following properties of addition of whol
 
 @@solution
 
-#### Solution
+##### Solution
 
 Solutions may vary.
 
@@ -168,7 +200,7 @@ easier: we can simply give a single concrete example which does not satisfy the 
 
 @@problem
 
-### Exercise 3: Counterexamples
+#### Exercise 4: Counterexamples
 
 Give a counterexample for each of the following incorrect statements about whole numbers:
 
@@ -180,7 +212,7 @@ Give a counterexample for each of the following incorrect statements about whole
 
 @@solution
 
-#### Solution
+##### Solution
 
 Solutions may vary.
 1. Take $a = 0$. Then $a + a = 0 + 0 = 0 \not > 0 = a$.
@@ -193,8 +225,240 @@ Note that even though each of the statements is false, they all have certain cas
 they do hold. In the future, we will see techniques to find out exactly which cases the
 statement is true in.
 
-<!--
+## Rational Numbers
 
+The motivation behind **fractions** is similar to that of expanding the whole numbers to the
+integers. Many things in the real world are divisible into portions. For instance, we can
+cut a cake into slices. Natural numbers are good at counting wholes, but bad at measuring
+parts of wholes.
+
+To solve this problem, we introduce the concept of splitting a single whole into $n$ equal
+parts, where $n$ is a positive whole number. (Later, we will allow $n$ to be negative, but
+it cannot be zero — it is not possible to split something into zero equal parts.) We write
+this as $\frac{1}{n}$, and call each of the equal parts an $n$th part. (If $n := 10$, then
+they are called tenths.) We may sometimes require more than one such equal part. If we want
+$m$ parts where $m$ is any integer, we will write it as $\frac{m}{n}$.
+
+All numbers that can be formed from fractions of integers are called **rational numbers**.
+We can talk about rational numbers as an extension to the integers, just like how we did
+with integers above, as an extension to the natural numbers. Each integer is still a
+rational number: for every integer $n$, and $n = \frac{n}{1}$.
+
+There are various simple properties of fraction addition and subtraction, and
+multiplication, by counting the number of of $n$th parts:
+
+1. For all integers $a$, $b$, and $c$, if $c > 0$, then $\frac{a}{c} + \frac{b}{c} =
+   \frac{a+b}{c}$.
+2. For all integers $a$, $b$, and $c$, if $c > 0$, then $\frac{a}{c} - \frac{b}{c} =
+   \frac{a-b}{c}$.
+3. For all integers $a$, $b$, and $c$, if $c > 0$, then $\frac{a}{c} \times b =
+   \frac{ab}{c}$.
+
+With the integers, we could not in general perform exact division on any two integers.
+Fractions cover the case of dividing _almost_ any two integers (_almost_, since the
+denominator may not be $0$). But do we still have closure under addition, subtraction, and
+multiplication? Moreover, do we almost have closure under division (if we disallow a zero
+divisor)? We only saw some special cases of these operations above. We need to introduce
+stronger techniques — a general way to do addition, subtraction, and multiplication of
+fractions, to show that this closure is indeed the case.
+
+### Fraction Multiplication
+
+We saw above how to multiply a fraction by an integer. This has the same meaning as
+multiplying two integers; we can think of it as adding (maybe in the negative direction)
+repeated copies of the fraction. But it is harder to extend this idea toward multiplying two
+fractions: what do we mean when we say we want $\frac{1}{2}$ copies of $\frac{1}{3}$?
+
+Luckily, there is in fact a single reasonable meaning for this. Recall that $\frac{m}{n}$
+means to split a single whole into equal $n$th parts, then take $m$ copies of the $n$th
+parts. We can replace the single whole with something that is itself an arbitrary rational
+number: let $q \times \frac{m}{n}$ mean to split $q$ into $n$th parts, and then take $m$ of
+those. Then, $1 \times \frac{m}{n} = \frac{m}{n}$, as we would expect.
+
+How do we split $\frac{a}{c}$ into $n$th parts? We can split each of the $a$ copies of the
+$b$th parts into $n$ parts, then only take one of every $n$. Each small part is a $b$th part
+split further into $n$ parts. In a single whole, there would be $c\times n$ equal such
+parts, so these small parts are in fact $\frac{1}{c\times n}$ each.
+
+Therefore, we can justify the following fact (or definition, or a sort) about fraction
+multiplication:
+
+@@theorem
+
+#### Fact 1: Fraction Multiplication
+
+Let $a$, $b$, $c$ and $d$ be integers with $c \ne 0 \ne d$. Then \[
+  \frac{a}{c} \times \frac{b}{d} = \frac{a \times b}{c \times d}
+\]
+
+@@
+
+### Equivalence Classes
+
+It happens to be the case with fractions that distinct ordered pairs might represent the
+same quantity. For instance, $\frac{3}{6}$ and $\frac{7}{14}$ are different pairs of
+numbers, but they represent the same fraction: one half. All the fractions that represent
+the same particular quantity form a so-called **equivalence class**. In a sense, this is not
+very different from $2 - 5$ and $3 - 6$ representing the same change in quantity $-3$.
+
+How can we decide whether two fractions represent the same quantity? That is, suppose that
+$\frac{a}{c}$ and $\frac{b}{d}$ are rational numbers. Are they equal? In the case where
+the denominator is the same, this is easy to answer: just compare the numerators. Rational
+numbers with the same denominator are equal if and only if the numerators are equal.
+
+@@theorem
+
+#### Fact 2: Equivalence of Fractions With Equal Denominator
+
+Let $a$, $b$, and $c$ be integers, and $c \ne 0$. Then \[
+   \frac{a}{c} = \frac{b}{c} \iff a = b
+\]
+
+@@
+
+If the denominators are not the same, we need to rewrite the two fractions to have the same
+denominator. We can do this by first noticing the following fact, which we can obtain from
+our knowledge of fraction multiplication:
+
+@@theorem
+
+#### Fact 3: Common Factor of Numerator and Denominator
+
+Let $a$, $b$ and $c$ be integers, and $c \ne 0 \ne b$. Then \[
+   \frac{a}{c} = \frac{a}{c} \times 1 = \frac{a}{c} \times \frac{b}{b} = \frac{a \times b}{c
+   \times b}
+\]
+
+@@
+
+This fact allows us to rewrite $\frac{a}{c}$ as $\frac{a\times d}{c\times d}$, and
+$\frac{b}{d}$ as $\frac{b\times c}{d\times c}$. Now the denominators are the same (remember
+$c\times d = d\times c$ for any integers $c$ and $d$). So we can simply compare $a\times d$
+with $b\times c$!
+
+Visually, we are multiplying the top-left with the bottom-right, and the top-right with the
+bottom-left. This makes a cross shape, so one way to remember this technique is that it is
+often called “cross-multiplication”.
+
+@@theorem
+
+#### Fact 4: Cross-multiplication
+
+Let $a$, $b$, $c$ and $d$ be integers, and $c \ne 0 \ne d$. Then \[
+  \frac{a}{b} = \frac{c}{d} \iff a\times d = b\times c
+\]
+
+@@
+
+### Addition and Subtraction
+
+We have seen above the example of rewriting fractions with a common denominator in order to
+compare them. But another use of fractions with a common denominator is that they are easy
+to add and subtract. We can apply the same technique:
+
+@@problem
+
+#### Exercise 5: Fraction Addition and Subtraction
+
+Rewrite the fractions using a common denominator in order to calculate:
+
+1. $\displaystyle\frac{1}{2} + \frac{1}{3} =$
+2. $\displaystyle\frac{1}{2} - \frac{1}{3} =$
+3. $\displaystyle\frac{1}{3} - \frac{2}{-3} =$
+
+@@
+
+@@solution
+
+##### Solution
+
+1. $\displaystyle\frac{1}{2} + \frac{1}{3} = \frac{1\times 3}{2\times 3} + \frac{1\times
+   2}{3\times 2} = \frac{3}{6} + \frac{2}{6} = \boxed{\frac{5}{6}}$
+2. $\displaystyle\frac{1}{2} - \frac{1}{3} = \frac{1\times 3}{2\times 3} - \frac{1\times
+   2}{3\times 2} = \frac{3}{6} - \frac{2}{6} = \boxed{\frac{1}{6}}$
+3. $\displaystyle\frac{1}{3} - \frac{2}{-3} = \frac{1}{3} - \frac{2\times(-1)}{-3\times(-1)}
+   = \frac{1}{3} - \frac{-2}{3} = \boxed{\frac{1}{3}}$
+
+@@
+
+In general, we can derive formulas for addition and subtraction of fractions, but you should
+not memorize them. It is more useful to understand the process of arriving at the formulas.
+
+@@theorem
+
+#### Fact 5: Fraction Addition & Subtraction
+
+Let $a$, $b$, $c$ and $d$ be integers with $c \ne 0 \ne d$. Then \[
+  \frac{a}{c} + \frac{b}{d} = \frac{a \times d}{c \times d} + \frac{b \times c}{d \times c}
+  = \frac{a\times d + b\times c}{c \times d} \]
+and \[
+  \frac{a}{c} - \frac{b}{d} = \frac{a \times d}{c \times d} - \frac{b \times c}{d \times c}
+  = \frac{a\times d - b\times c}{c \times d} \]
+
+Notice the resemblance to cross-multiplication. This is not accidental! From the subtraction
+formula, we see that if two fractions are equal, their difference is zero, and vice versa.
+
+@@
+
+### Simplification
+
+Often, given some fraction, we want to find the equivalent fraction with the smallest
+possible positive integer denominator. This is called the **simplest form** and is is useful
+for various reasons:
+
+ - Smaller positive integer denominators are easier for people to understand.
+ - Two fractions that are equal will have the same simplest form, so fractions in simplest
+   form are easy to compare.
+
+Reducing a fraction to simplest form is a matter of finding the largest common factor of
+both the numerator and denominator, and then dividing both the numerator and denominator by
+it.
+
+@@problem
+
+#### Exercise 6: Fraction Operations and Simplification
+
+Compute each of the following, then reduce it to simplest form.
+
+1. $\displaystyle \frac{3}{8} \times \frac{2}{7} =$
+2. $\displaystyle \frac{5}{9} \times \frac{2}{5} =$
+
+@@
+
+@@solution
+
+##### Solution
+
+1. $\displaystyle \frac{3}{8} \times \frac{2}{7} = \frac{6}{56} = \boxed{\frac{3}{28}}$
+2. $\displaystyle \frac{5}{9} \times \frac{2}{5} = \frac{10}{45} = \boxed{\frac{2}{9}}$
+
+@@
+
+@@problem
+
+#### Exercise 7: A Telescoping Product
+
+Compute and reduce to simplest form: \[
+  \frac{1}{2} \times \frac{2}{3} \times \frac{3}{4} \times \dots \times \frac{99}{100}
+\]
+
+@@
+
+@@solution
+
+##### Solution
+
+Each fraction in this product, except for the last one, has a numerator which is the same as
+the denominator of the following fraction. These will cancel out if we multiply the
+fractions. For instance, $\frac{1}{2} \times \frac{2}{3} = \frac{1\times 2}{2 \times 3}$,
+and we can divide $2$ from both the numerator and the denominator to get $\frac{1}{3}$.
+
+In this manner, all the numbers except for the first $1$ in the numerator and the last $100$
+in the denominator will get cancelled out. So we are left with $\boxed{\frac{1}{100}}$.
+
+@@
+
+<!--
 
 ## Sets and Variables
 
@@ -255,14 +519,20 @@ We have notation for some important sets that we see frequently:
 
 ## Two-Dimensional Vector Spaces
 
-An \gls{ordered pair} is two things written in an order. For example, $(3, 4)$ is an
-ordered pair of numbers. Ordered pairs frequently represent a single concept that is made of
-two components --- though keep in mind that these components are not always written as in
-this example.
+An **ordered pair** is two things written in an order. For example, $(3, 4)$ is an ordered
+pair of numbers. Ordered pairs frequently represent a single concept that is made of two
+components — though keep in mind that these components are not always written as in this
+example.
 
 A simple ordered pair like $(3, 4)$ does not itself have much meaning, aside from being a
 collection of two numbers. However, we may assign an interpretation to particular ordered
 pairs to give them a meaning.
+
+We saw earlier that fractions, like $\frac{a}{b}$, are made up of two components (which we
+called the numerator and denominator). Indeed, fractions are a kind of ordered pair $(a,
+b)$, with the first element of this ordered pair representing the number of fractional
+pieces, and the second element representing the size of a whole relative to a single
+fractional piece.
 
 One interpretation of ordered pairs is as vectors in a two-dimensional plane. The components
 of the vector $[a, b]$ represent the displacement in two directions. For example, the first
@@ -273,73 +543,6 @@ choices of directions are collectively called a **basis**.)
 We have notation for the set of two-dimensional vectors where both components are real
 numbers: $\mathbf{R}^2$. The superscript $^2$ denotes that the vector space is two
 dimensional, i.e. has two components.
-
-## Rational Numbers
-
-**Fractions**, like two-dimensional vectors, are another example of ordered pairs with an
-assigned interpretation. The fraction $\frac{a}{b}$ is itself an ordered pair $(a, b)$,
-with the first element of this ordered pair representing the number of fractional pieces,
-and the second element representing the size of a whole relative to a single fractional
-piece.
-
-\begin{problem}{Fractions}
- Compute each of the following:
-
- \[
-         \frac{3}{8} \times \frac{2}{7} = \frac{6}{56} =
-         \Ans{\displaystyle\frac{3}{28}}
-        \]
- \[
-  \frac{5}{9} \times \frac{2}{5} = \frac{10}{45} =
-  \Ans{\displaystyle\frac{2}{9}}
-  \]
-\end{problem}
-
-It happens to be the case with fractions that distinct ordered pairs might represent the
-same quantity. For instance, $\frac{3}{6}$ and $\frac{7}{14}$ are different pairs of
-numbers, but they represent the same fraction: one half. All the fractions that represent
-the same particular quantity form a so-called **equivalence class**. All numbers that can
-be formed from fractions of integers are called \glspl{rational number}.
-
-How can we decide whether two fractions represent the same quantity? That is, suppose that
-$\frac{a}{b}$ and $\frac{c}{d}$ are rational numbers. Are they equal? In the case where
-the denominator is the same, this is easy to answer: just compare the numerators. Rational
-numbers with the same denominator are equal if and only if the numerators are equal.
-
-If the denominators are different, one technique is to rewrite the fractions with a common
-denominator. We see that $\frac{a}{b} = \frac{a\times d}{b\times d}$ and $\frac{c}{d} =
-\frac{c\times b}{b\times d}$. Now we can compare the numerators. Thus, in general, we
-obtain the result Equation~\ref{rat:fractionequalityalgorithm}. Visually, we are multiplying
-the top-left with the bottom-right, and the top-right with the bottom-left. This makes a
-cross shape, so one way to remember this technique is that it is often called
-“cross-multiplication”.
-
-\begin{equation}
-  \frac{a}{b} = \frac{c}{d} \iff a\times d = b\times c
-  \label{rat:fractionequalityalgorithm}
-\end{equation}
-
-Here is a fun example of fraction multiplication:
-
-\begin{problem}{A Telescoping Product}
-  Find the product:
-  \[
-    \frac{1}{2} \times \frac{2}{3} \times \frac{3}{4} \times
-    \dots \times \frac{99}{100}
-   \]
-
-  \begin{solution}
-    Each fraction in this product, except for the last one, has a numerator which is the
-    same as the denominator of the following fraction. These will cancel out if we multiply
-    the fractions. For instance, $\frac{1}{2} \times \frac{2}{3} = \frac{1\times 2}{2
-    \times 3}$, and we can divide $2$ from both the numerator and the denominator to get
-    $\frac{1}{3}$.
-
-    In this manner, all the numbers except for the first $1$ in the numerator and the last
-    $100$ in the denominator will get cancelled out. So we are left with
-    \Ans{\displaystyle \frac{1}{100}}.
-  \end{solution}
-\end{problem}
 
 \chapter{Real Numbers}
 
