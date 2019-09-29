@@ -458,66 +458,69 @@ in the denominator will get cancelled out. So we are left with $\boxed{\frac{1}{
 
 @@
 
-<!--
+## Real Numbers
 
-## Sets and Variables
+### Motivation
+
+TK rewrite
+
+Various forms of numbers arise from the desire to solve algebraic equations. But
+contrary to popular belief, this desire was not to be able to solve equations
+that have no solution, but rather to solve equations that do have a solution,
+but whose solution can be arrived at easier by introducing a new kind of number.
+
+TK (talk about limits, reals)
+
+## Sets
 
 A set is an unordered collection of mathematical objects. For our purposes, we will use sets
-as a convenient notation to describe the concept of “one of these kinds of things”.
+as a convenient notation to describe the concept of “one of these kinds of things”. One way
+to describe a set is to list every object contained in the set: for instance, $\{3, 5, 9,
+10\}$ is a set of four integers. Note that a set itself is a mathematical object!
 
-A variable is a letter that represents a mathematical object whose value may be unknown. We
-say “may be unknown” because it is possible we do know the value of a variable. For
-instance, if I write $x := 1$, this means that I define the variable $x$ to refer to the
-number $1$. But I might also say “Let $x$ be an integer (whole number).”; here, we do
-not know the exact value of $x$, but we have a constraint on it: it must be a whole
+Remember that a variable is a letter that represents a mathematical object whose value may
+be unknown. We say “may be unknown” because it is possible we do know the value of a
+variable. For instance, if I write $x := 1$, this means that I define the variable $x$ to
+refer to the number $1$. But I might also say “Let $x$ be an integer (whole number).”; here,
+we do not know the exact value of $x$, but we have a constraint on it: it must be a whole
 number.
 
-We can express certain kinds of constraint with set-membership notation, as in
-Constraint~\ref{mmo:setmember}, which states that the value of $x$ must be $1$ or $4$
-or $100$:
-\begin{equation} ”
+We can express certain kinds of constraint with set-membership notation. For instance, to
+say that the value of $x$ must be $1$ or $4$ or $100$, we can write: \[
   x \in \{1, 4, 100\}
-  \label{mmo:setmember}
-\end{equation}
+\]
 
-How would we express the idea that $x$ is an integer with this notation? We obviously
-cannot list out all the integers, since there are infinitely many. Instead we will adopt a
-notation for an infinite set of all whole numbers: $\mathbf{Z}$ (a boldface Z). The reason
-for the choice of the letter Z comes from the German word Zahlen, which means “number”.
-Thus we can express the constraint “$x$ is an integer” using the notation of
-Constraint~\ref{mmo:isinteger}.
-\begin{equation}
+How would we express the idea that $x$ is an integer with this notation? We obviously cannot
+list out all the integers, since there are infinitely many. Instead we will adopt a notation
+for an infinite set of all integers: $\mathbf{Z}$ (a boldface Z). The reason for the choice
+of the letter Z comes from the German word Zahlen, which means “number”. Thus we can express
+the constraint “$x$ is an integer” using the notation: \[
   x \in \mathbf{Z}
-  \label{mmo:isinteger}
-\end{equation}
+\]
 
-Another kind of constraint we often see is an equation. A series of constraints is seen in
-Constraints~\ref{mmo:equation1} and \ref{mmo:equation2}, where we are given that $x$ is a
-real number (a positive or negative number that can be a fraction or can even be an
-irrational number), and further that $x^2 = 4$. This series of constraints is actually
-equivalent to $x \in \{-2, 2\}$, since these are the only two real numbers whose square
-is $4$.
-\begin{align}
-  x &\in \mathbf{R}
-  \label{mmo:equation1}
-  \\
-  x^2 &= 4
-  \label{mmo:equation2}
-\end{align}
+Another kind of constraint we often see is an equation. For example, consider: \[
+  \begin{aligned}
+    x &\in \mathbf{Z} \\
+    x^2 &= 4
+  \end{aligned}
+\] which states that $x$ is an integer and further that $x^2 = 4$. This series of
+constraints is actually equivalent to $x \in \{-2, 2\}$, since these are the only two
+integers whose square is $4$.
 
 We have notation for some important sets that we see frequently:
 
-\begin{itemize}
-  \item $\mathbf{N} = \{0, 1, 2, \dots\}$ is the set of natural numbers.
-  \item $\mathbf{Z} = \{\dots, -2, 1, 0, 1, 2, \dots\}$ is the set of integers (whole
-  numbers).
-  \item $\mathbf{Q} = \operatorname{Quot}(\mathbf{Z})$ is the set of rational numbers
-  (fractions), which we will discuss in a later section.
-  \item $\mathbf{R} = \overline{\mathbf{Q}}$ is the set of real numbers, which we will
-  discuss in a later section.
-\end{itemize}
+ - $\mathbf{N} = \{0, 1, 2, \dots\}$ is the set of natural numbers.
+ - $\mathbf{Z} = \{\dots, -2, 1, 0, 1, 2, \dots\}$ is the set of integers (whole
+   numbers).
+ - $\mathbf{Q} = \operatorname{Quot}(\mathbf{Z})$ is the set of rational numbers
+   (fractions).
+ - $\mathbf{R} = \overline{\mathbf{Q}}$ is the set of real numbers.
 
-## Two-Dimensional Vector Spaces
+### Set Operations
+
+TK: Union, Intersection, Difference
+
+## Vectors
 
 An **ordered pair** is two things written in an order. For example, $(3, 4)$ is an ordered
 pair of numbers. Ordered pairs frequently represent a single concept that is made of two
@@ -534,29 +537,19 @@ b)$, with the first element of this ordered pair representing the number of frac
 pieces, and the second element representing the size of a whole relative to a single
 fractional piece.
 
-One interpretation of ordered pairs is as vectors in a two-dimensional plane. The components
-of the vector $[a, b]$ represent the displacement in two directions. For example, the first
-component might represent displacement to the right, and the second component displacement
-toward top of the page. (Such an interpretation is called a **vector space**, and the
-choices of directions are collectively called a **basis**.)
+Another interpretation of ordered pairs is as vectors in a two-dimensional plane. The
+components of the vector $[a, b]$ represent the displacement in two directions. For example,
+the first component might represent displacement to the right, and the second component
+displacement toward top of the page. (Such an interpretation is called a **vector space**,
+and the choices of directions are collectively called a **basis**.)
 
 We have notation for the set of two-dimensional vectors where both components are real
 numbers: $\mathbf{R}^2$. The superscript $^2$ denotes that the vector space is two
 dimensional, i.e. has two components.
 
-\chapter{Real Numbers}
+## Polynomials
 
-## Motivation
-
-Various forms of numbers arise from the desire to solve algebraic equations. But
-contrary to popular belief, this desire was not to be able to solve equations
-that have no solution, but rather to solve equations that do have a solution,
-but whose solution can be arrived at easier by introducing a new kind of number.
-
-
-TK (talk about limits, reals)
-
-## Exponents
+### Exponents
 
 Recall that a positive exponent represents repeated multiplication, much like how a positive
 multiplier represents repeated addition. We can express this rule recursively using the
@@ -565,64 +558,83 @@ following identity: \[
 \] which says that if you increase the exponent by $1$ it is the same as multiply one more
 copy of the base.
 
-\begin{problem}{Discrete Exponents}
- Evaluate each expression. Write your answer as an integer in simplest form
- using the place value system.
+@@problem
 
- \begin{enumerate}[\hspace{.5cm}a.]
-  \item $2^4=\Ans{16}$
-  \item $3^2=\Ans{9}$
-  \item $10^6=\Ans{1000000}$
- \end{enumerate}
-\end{problem}
+#### Exercise N: Positive Integer Exponents
+
+Evaluate each expression. Write your answer as an integer in literal form.
+
+1. $2^4=$
+2. $3^2=$
+3. $10^6=$
+
+@@
+
+@@solution
+
+##### Solution
+
+1. $2^4=\boxed{16}$
+2. $3^2=\boxed{9}$
+3. $10^6=\boxed{1000000}$
+
+@@
 
 It is frequently useful to extend the system of exponents to non-positive numbers, which can
 be done by applying the recursive rule in the other direction. Thus we can derive that $x^0
 = 1$ and that $x^{-1} = \frac{1}{x}$ for all non-zero values of $x$.
 
-\begin{problem}{Negative and Zero Exponents}
- Evaluate each expression. Write your answer in simplest form as a fraction, or
- as an integer using the place value system.
+@@problem
 
- \begin{enumerate}[\hspace{.5cm}a.]
-  \item ${-1}^{-1}=\Ans{-1}$
-  \item $4^{-2}=\Ans{\frac{1}{16}}$
-  \item ${999}^0=\Ans{1}$
-  \item ${\left(\frac{-17}{4}\right)}^0=\Ans{1}$
- \end{enumerate}
-\end{problem}
+#### Exercise N: Negative and Zero Exponents
+
+Evaluate each expression. Write your answer in simplest form as a fraction or as an integer
+literal.
+
+1. ${-1}^{-1}=\boxed{-1}$
+2. $4^{-2}=\boxed{\frac{1}{16}}$
+3. ${999}^0=\boxed{1}$
+4. ${\left(\frac{-17}{4}\right)}^0=\boxed{1}$
+
+@@
 
 A useful application of exponents is in shrinking large numbers to an more humanly
 understandable format. Indeed, we have a poor conception of how large certain numbers are.
 In science, it's common to see numbers way too large to count or way too small to visualize.
 Scientists have developed notation using exponents to make comparing such numbers easier. In
-scientific notation, a number $x$ is written as $y\times 10^n$, where $y$ is a number
-with exactly one non-zero decimal digit before the decimal point, and $n$ is a (positive,
+scientific notation, a number $x$ is written as $y\times 10^n$, where $y$ is a number with
+exactly one non-zero decimal digit before the decimal point, and $n$ is a (positive,
 negative, or zero) exponent.
 
-\begin{problem}{Scientific Notation}
- Express in scientific notation.
+@@problem
 
- \begin{enumerate}[\hspace{.5cm}a.]
-  \item $1234=\Ans{1.234\times 10^3}$
-  \item $0.000987= \Ans{9.87\times 10^{-4}}$
- \end{enumerate}
-\end{problem}
+#### Exercise N: Scientific Notation
+
+Express in scientific notation.
+
+1. $1234 = \boxed{1.234\times 10^3}$
+2. $0.000987 = \boxed{9.87\times 10^{-4}}$
+
+@@
 
 With rational exponents, TK (we generalize a different law)
 
-\begin{problem}{Fractions, Exponents \& Radicals}
- Evaluate each expression. Write your answer in simplest form as a fraction, or
- as an integer using the place value system.
+@@problem
 
- \begin{enumerate}[\hspace{.5cm}a.]
-  \item $4^{\frac{1}{2}}=\Ans{2}$
-  \item $9^{\frac{3}{2}}=\Ans{27}$
-  \item ${\left(\frac{2}{3}\right)}^3=\Ans{\frac{8}{27}}$
-  \item $\sqrt{\frac{16}{25}}=\Ans{\frac{4}{5}}$
-  \item $\sqrt[4]{\frac{256}{81}}=\Ans{\frac{4}{3}}$
- \end{enumerate}
-\end{problem}
+#### Exercise N: Fractions, Exponents \& Radicals
+
+Evaluate each expression. Write your answer in simplest form as a fraction, or as an integer
+using the place value system.
+
+1. $4^{\frac{1}{2}}=\boxed{2}$
+2. $9^{\frac{3}{2}}=\boxed{27}$
+3. ${\left(\frac{2}{3}\right)}^3=\boxed{\frac{8}{27}}$
+4. $\sqrt{\frac{16}{25}}=\boxed{\frac{4}{5}}$
+5. $\sqrt[4]{\frac{256}{81}}=\boxed{\frac{4}{3}}$
+
+@@
+
+<!--
 
 Of course, as we saw above (TK) some numbers are not rational
 
@@ -643,11 +655,11 @@ Of course, as we saw above (TK) some numbers are not rational
  c)$.
 
  \begin{enumerate}[\hspace{.5cm}a.]
-  \item **Apropos** (with regard to) positive integers, is $+$ associative?
+  \item With regard to real numbers, is $+$ associative?
   (That is, is $(a+b)+c=a+(b+c)$ for all $a$, $b$ and $c$?) \AnsT{Yes}
-  \item Apropos positive integers, is $\times$ associative? \AnsT{Yes}
+  \item With regard to real numbers, is $\times$ associative? \AnsT{Yes}
   \item Let $\uparrow$ represent exponentiation; that is, $2\uparrow4=2^4=16$.
-  Apropos positive integers, is $\uparrow$ associative? \AnsT{No}
+  With regard to positive integers, is $\uparrow$ associative? \AnsT{No}
  \end{enumerate}
 \end{problem}
 
@@ -662,7 +674,7 @@ Of course, as we saw above (TK) some numbers are not rational
  \end{enumerate}
 \end{problem}
 
-## Sums}
+## Sums
 
 Adding things is a very important part of mathematics. When we have a large
 number of things to add, it helps to use algebra to simplify the problem. The
