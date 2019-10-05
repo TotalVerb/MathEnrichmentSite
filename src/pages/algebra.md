@@ -458,6 +458,228 @@ in the denominator will get cancelled out. So we are left with $\boxed{\frac{1}{
 
 @@
 
+## Linear Equations
+
+### Ratios and Rates
+
+Frequently, we may know certain quantities not in absolute terms, but only in relative
+terms. What does this mean? Let’s say you see two weights on the ground, labeled A and B.
+You might notice that B is twice as hard to lift up as A. Without a scale, it is hard for
+you to measure the actual weight of the objects, but you might be able to estimate the
+**ratio** of their weights.
+
+In another example, suppose you are counting cars as they pass by on a highway. You might
+notice that for every $5$ personal cars you count, you see about one truck. It might be hard
+for you to estimate how many cars are passing by each minute, since it is hard to guess how
+long a minute is, but you could estimate the ratio of personal cars to trucks on this
+highway.
+
+We will see a couple of word problems that involve known ratios, and try to determine the
+absolute quantities using additional information provided to us.
+
+@@problem
+
+#### Exercise 8: Carcross Car Count
+
+The community of Carcross, Yukon is quite small, with a population of only 301. Caroline
+counts the number of cars that passed her house over an hour and noticed that:
+
+- There were $15$ cars that passed in total.
+- All cars were either blue or silver.
+- Twice as many cars were blue than silver.
+
+How many blue cars passed by? How many silver cars?
+
+@@
+
+@@solution
+
+##### Solution
+
+Let $b$ and $s$ be integers representing the number of cars that passed her house. Then our
+equations are: \[
+\begin{aligned}
+b + s &= 15 \\
+b &= 2s \\
+\end{aligned}
+\]
+
+We can **substitute** the second equation into the first equation, since $2s$ and $b$ refer
+to the same mathematical object. Thus: \[
+\begin{aligned}
+2s + s &= 15 \\
+3s &= 15 \\
+\textcolor{blue}{\frac{1}{3}} \times 3s &= \textcolor{blue}{\frac{1}{3}} \times 15 \\
+s &= 5 \\
+\end{aligned}
+\] so there were $\boxed{5}$ silver cars. Then we can substitute this back into that second
+equation $b = 2s$. So $b = 2 \times 5$, and so $b = 10$. Therefore there were $\boxed{10}$
+blue cars.
+
+@@
+
+@@problem
+
+#### Exercise 9: Produce Price Sum
+
+A supermarket stocks four kinds of produce: apples, oranges, tomatos, and potatos. Apples
+cost twice as much as oranges, and oranges cost twice as much as tomatos. August bought
+$1\,\mathrm{kg}$ of each kind of produce, and the total price was $\$20$.
+
+Can we figure out what was the price of tomatos? If so, what was it?
+
+@@
+
+@@solution
+
+##### Solution
+
+Let $a$, $o$, $t$, and $p$ be rational numbers representing the prices of apples, oranges,
+tomatos, and potatos, all in dollars per kilogram. Then our equations are \[
+\begin{aligned}
+a &= 2o \\
+o &= 2t \\
+a + o + t + p &= 20 \\
+\end{aligned}
+\]
+
+If we substitute the first and second equations into the third, we get \[
+4t + 2t + t + p = 20
+\] and thus $7t + p = 20$. But there is a problem: there are multiple solutions to this!
+There are even multiple integer solutions; for instance, maybe $t = 2$ and $p = 6$, or $t =
+1$ and $p = 13$. So we do not have enough information to figure out the price of tomatos.
+
+@@
+
+@@problem
+
+#### Exercise 10: An Unlikely Sprint?
+
+Miran, Gosse, and Brayan participated in a $100\,\mathrm{m}$ sprint. Miran tells you that
+she won and was twice as fast as Brayan. Gosse agrees that Miran won, and says he was close
+behind with a time only $20\%$ higher than Miran’s. Brayan says that he came in last with a
+time $8\,\mathrm{s}$ longer than Gosse’s time.
+
+You know, however, that sometimes Miran, Gosse, and Brayan aren’t the most reliable. Is it
+mathematically possible for all of these accounts to be accurate? If so, do we have enough
+information to determine what were each of their times? If so, calculate the times.
+
+@@
+
+@@solution
+
+##### Solution
+
+Let $x$ denote Miran’s time, $y$ denote Gosse’s time, and $z$ denote Brayan’s time. Based on
+what everyone said, the equations are: \[
+\begin{aligned}
+x &= \frac{1}{2} z \\
+y &= 1.2 x \\
+z &= y + 8\,\mathrm{s} \\
+\end{aligned}
+\]
+
+Substitute the expression for $x$ given by first equation into the second equation, to get
+\[ y = 1.2 \times \textcolor{blue}{\frac{1}{2}} z = \frac{3}{5} z \]
+
+Now substitute this into the third equation, to get \[
+\begin{aligned}
+z &= \textcolor{blue}{\frac{3}{5} z} + 8\,\mathrm{s} \\
+\textcolor{blue}{-\frac{3}{5} z} + z &= \textcolor{blue}{-\frac{3}{5} z} + \frac{3}{5}
+z + 8\,\mathrm{s} \\
+\frac{2}{5} z &= 8\,\mathrm{s} \\
+\textcolor{blue}{\frac{5}{2}} \times \frac{2}{5} z &= \textcolor{blue}{\frac{5}{2}}
+\times 8\,\mathrm{s} \\
+z &= 20\,\mathrm{s} \\
+\end{aligned}
+\]
+
+We can now substitute this back into $y = \frac{3}{5} z$ to get $y = 15\,\mathrm{s}$, and
+into $x = \frac{1}{2} z$ to get $x = 10\,\mathrm{s}$ (very fast indeed, maybe suspiciously
+so!).
+
+We can check that these times match all three of the equations above, so it is
+mathematically possible and unique. This doesn’t mean that the statements were accurate, but
+they are not mathematically contradictory.
+
+@@
+
+@@problem
+
+#### Exercise 11: Raccoon Population Growth
+
+The number of raccoons in the city of Raccoonville is plotted on the following chart:
+
+```julia:algebra/raccoons
+# hideall
+import Plots
+Plots.pyplot()
+Plots.plot(title="Number of raccoons in Raccoonville", xlabel="Year", ylabel="Number of raccoons")
+Plots.scatter!(2015:2019, 90:10:130, label="Number of raccoons")
+Plots.savefig(joinpath(@__DIR__, "raccoons.png"))
+```
+
+![](/assets/algebra/raccoons.png)
+
+If the current trend continues, by what year will there be 180 raccoons in Raccoonville?
+
+@@
+
+@@solution
+
+##### Solution
+
+In this problem, we have to figure out the rate of increase of raccoons from the chart. The
+trend seems to be a straight line with an increase of $10$ raccoons every year. We can
+assume this trend will continue as the question asks us in that hypothetical. Let $x$ denote
+the number of years after $2019$. Then the number of raccoons will be $130 + 10x$. We want
+to solve: \[
+\begin{aligned}
+130 + 10x &= 180 \\
+\textcolor{blue}{-130} + 130 + 10x &= \textcolor{blue}{-130} + 180 \\
+10x &= 50 \\
+\frac{10x}{\textcolor{blue}{10}} &= \frac{50}{\textcolor{blue}{10}} \\
+x &= 5 \\
+\end{aligned}
+\]
+
+Since this means $5$ years after $2019$, the year that there will be $180$ raccoons in
+Raccoonville is $2019 + 5 = \boxed{2024}$.
+
+@@
+
+### A General Approach
+
+The examples above all have the same general form, where we have a number of equations of
+the form $ax = b$, where $a$, $b$, and $x$ are rational numbers, and we know $a$ and $b$
+(but not $x$). Equations of this form are called “linear equations”. Why are they linear?
+Intuitively, one reason is that if we draw a line graph of the value of $ax$ as we increase
+the value of $x$, we will find a straight line:
+
+```julia:algebra/linearplot
+# hideall
+import Plots
+Plots.pyplot()
+Plots.plot(title="Plot of x vs. various linear functions", xlabel="x", ylabel="linear function of x")
+Plots.plot!(x -> 0, label="0x")
+Plots.plot!(x -> x, label="1x")
+Plots.plot!(x -> 3x, label="3x")
+Plots.savefig(joinpath(@__DIR__, "linearplot.png"))
+```
+
+![](/assets/algebra/linearplot.png)
+
+The solution to $ax=b$, if one exists, is simply where this straight line reaches a vertical
+height of $b$. We saw a general technique to do this if $a\ne 0$: we can multiply both sides
+by $\frac{1}{a}$ (or equivalently, divide both sides by $a$). Thus the solution is $x =
+\frac{b}{a}$.
+
+But what if $a = 0$? In this case, we cannot divide by $a$, since division by $0$ is
+meaningless. Instead, we have the flat blue line in the graph. Obviously, this line will
+never reach any vertical height except $0$! Therefore, there is **no solution** if $b \ne
+0$. If $b = 0$, then we still have no information about $x$: any rational number will do. In
+this case, there are **multiple solutions**.
+
 ## Real Numbers
 
 ### Motivation
@@ -634,20 +856,25 @@ using the place value system.
 
 @@
 
-<!--
-
 Of course, as we saw above (TK) some numbers are not rational
 
-\begin{problem}{Irrational Numbers}
- Classify each number as rational or irrational.
+$\sqrt{3}$ is not rational. One way to see this is a so-called **proof by contradiction**.
+In this kind of argument, we assume that $\sqrt{3}$ is in fact rational. that if $\sqrt{3} =
+\frac{p}{q}$ for some integers $p$ and $q\ne 0$ in simplest form, then $\frac{p^2}{q^2} =
+3$, so $p^2 = 3q^2$. We see that $3$ is a factor of the right hand side, so it must also be
+a factor of the left hand side. But the left hand side is a square, so $p=3m$ for some
+integer $n$. Then $9k^2 = 3q^2$ so $3m^2 = q^2$. Now $3$ is a factor of the left hand side,
+so it should also be a factor of the right hand side. But the right hand side is a square,
+so $q=3n$ for some integer $n$. But then $\frac{p}{q} = \frac{3m}{3n}$ is clearly not in
+simplest form, so we have reached an absurd state — a contradiction.
 
- \begin{enumerate}[\hspace{.5cm}a.]
-  \item $8.25$ \hfill \AnsT{Rational}~~Irrational
-  \item $\sqrt{2}$ \hfill Rational~~\AnsT{Irrational}
-  \item $\sqrt{9}$ \hfill \AnsT{Rational}~~Irrational
-  \item $\pi$ \hfill Rational~~\AnsT{Irrational}
- \end{enumerate}
-\end{problem}
+It is sometimes useful to have a proof which does not simply deny that $\sqrt{3}$ is
+rational, but actually gives an algorithm that can tell you for any rational number
+$\frac{p}{q}$ explicitly that $\sqrt{3}$ is greater, or less, and by how much. TK.
+
+<!--
+
+
 
 \begin{problem}{Associativity}
  Call an operation $\blacksquare$ “associative” if we have for all $a$, $b$,

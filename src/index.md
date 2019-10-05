@@ -8,6 +8,15 @@ This is the class website for the Grand River Chinese School interest class on G
 Olympic Math, taught by [Fengyang Wang](https://wafy.me/). The teaching assistant for this
 class is [Eric Xiao](https://mathlord2.github.io/).
 
+## Lecture 2 (October 5, 2019)
+
+We discussed some of the problems from last week’s homework. We then gave many examples of
+word problems with a single variable. We noticed the similarities between these problems,
+and discussed a solution to linear equations with one variable in general.
+
+The [homework](assets/homework/linear-systems.pdf) and
+[answers](assets/solutions/linear-systems.pdf) are available.
+
 ## Lecture 1 (September 28, 2019)
 
 We reviewed the integers (including negative numbers) and introduced variables. We then
