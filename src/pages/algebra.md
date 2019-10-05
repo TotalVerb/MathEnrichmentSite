@@ -580,7 +580,7 @@ z &= y + 8\,\mathrm{s} \\
 \]
 
 Substitute the expression for $x$ given by first equation into the second equation, to get
-\[ y = 1.2 \times \textcolor{blue}{\frac{1}{2}} z = \frac{3}{5} z \]
+\[ y = 1.2 \times \textcolor{blue}{\frac{1}{2} z} = \frac{3}{5} z \]
 
 Now substitute this into the third equation, to get \[
 \begin{aligned}
@@ -594,7 +594,7 @@ z &= 20\,\mathrm{s} \\
 \end{aligned}
 \]
 
-We can now substitute this back into $y = \frac{3}{5} z$ to get $y = 15\,\mathrm{s}$, and
+We can now substitute this back into $y = \frac{3}{5} z$ to get $y = 12\,\mathrm{s}$, and
 into $x = \frac{1}{2} z$ to get $x = 10\,\mathrm{s}$ (very fast indeed, maybe suspiciously
 so!).
 
