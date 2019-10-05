@@ -680,6 +680,145 @@ never reach any vertical height except $0$! Therefore, there is **no solution** 
 0$. If $b = 0$, then we still have no information about $x$: any rational number will do. In
 this case, there are **multiple solutions**.
 
+## Polynomial Equations
+
+### Exponents
+
+Recall that a positive exponent represents repeated multiplication, much like how a positive
+multiplier represents repeated addition. We can express this rule recursively using the
+following identity: \[
+  x^{n+1} = xx^n
+\] which says that if you increase the exponent by $1$ it is the same as multiply one more
+copy of the base.
+
+@@problem
+
+#### Exercise 12: Positive Integer Exponents
+
+Evaluate each expression. Write your answer as an integer in literal form.
+
+1. $2^4=$
+2. $3^2=$
+3. $10^6=$
+
+@@
+
+@@solution
+
+##### Solution
+
+1. $2^4=2\times 2\times 2\times 2=\boxed{16}$
+2. $3^2=3\times 3=\boxed{9}$
+3. $10^6=10\times 10 \times 10\times 10\times 10\times 10=\boxed{1000000}$
+
+@@
+
+There are a variety of facts about positive integer exponents that we can justify using the
+properties of multiplication. Here are a few. You do not need to memorize these, but it is
+helpful to understand why they are true.
+
+@@theorem
+
+#### Fact 6: Sum of Exponents
+
+If $a$ is a rational number, and $n$ and $m$ are positive integers, then $a^m \times
+a^n = a^{m+n}$. That is: \[
+a^m \times a^n = \underbrace{a\times\dots\times a}_{m\text{ times}} \times
+\underbrace{a\times\dots\times a}_{n\text{ times}} = \underbrace{a\times\dots\times
+a}_{m+n\text{ times}} = a^{m+n}
+\]
+
+(Notice how when $n=1$, this is just the recursive rule we discussed above.)
+
+@@
+
+@@theorem
+
+#### Fact 7: Product of Exponents
+
+If $a$ is a rational number, and $n$ and $m$ are positive integers, then ${(a^m)}^n =
+a^{mn}$. That is: \[
+{(a^m)}^n = \underbrace{\left(\underbrace{a\times\dots\times a}_{m\text{ times}}\right)
+\times \dots \times \left(\underbrace{a\times\dots\times a}_{m\text{
+times}}\right)}_{n\text{ times}} = \underbrace{a\times\dots\times a}_{mn\text{ times}} =
+a^{mn}
+\]
+
+@@
+
+It is frequently useful to extend the system of exponents to non-positive numbers, which can
+be done by applying the recursive rule in the other direction. Thus we can derive that $x^0
+= 1$ and that $x^{-1} = \frac{1}{x}$ for all non-zero values of $x$. We can check that this
+extension retains the sum and product rules of exponents that we mentioned above, which is a
+useful feature.
+
+@@problem
+
+#### Exercise 13: Negative and Zero Exponents
+
+Evaluate each expression. Write your answer in simplest form as a fraction or as an integer
+literal.
+
+1. ${-1}^{-1}=\boxed{-1}$
+2. $4^{-2}=\boxed{\frac{1}{16}}$
+3. ${999}^0=\boxed{1}$
+4. ${\left(\frac{-17}{4}\right)}^0=\boxed{1}$
+
+@@
+
+A useful application of exponents is in shrinking large numbers to an more humanly
+understandable format. Indeed, we have a poor conception of how large certain numbers are.
+In science, it's common to see numbers way too large to count or way too small to visualize.
+Scientists have developed notation using exponents to make comparing such numbers easier. In
+scientific notation, a number $x$ is written as $y\times 10^n$, where $y$ is a number with
+exactly one non-zero decimal digit before the decimal point, and $n$ is a (positive,
+negative, or zero) exponent.
+
+@@problem
+
+#### Exercise 14: Scientific Notation
+
+Express in scientific notation.
+
+1. $1234 = \boxed{1.234\times 10^3}$
+2. $0.000987 = \boxed{9.87\times 10^{-4}}$
+
+@@
+
+A natural question to ask after having defined negative exponents is: what about rational
+exponents? Could those be useful? In fact, for a positive rational number base, we may
+sometimes  define rational exponents in a way that preserves both the sum and product laws
+of exponents mentioned above. The only way to do this is to ensure that
+${\left(x^{\frac{1}{n}}\right)}^n = x$, that is, $x^{\frac{1}{n}}$ must be the $n$th root of
+$x$. We can also write that as $\sqrt[n]{x}$. With this definition and the product law, we
+can define $x^q$ for any positive rational base $x$ and any rational exponent $q$.
+
+@@problem
+
+#### Exercise 15: Fractions, Exponents & Radicals
+
+Evaluate each expression. Write your answer in simplest form as a fraction, or as an integer
+using the place value system.
+
+1. $4^{\frac{1}{2}}=\boxed{2}$
+2. $9^{\frac{3}{2}}=\boxed{27}$
+3. ${\left(\frac{2}{3}\right)}^3=\boxed{\frac{8}{27}}$
+4. $\sqrt{\frac{16}{25}}=\boxed{\frac{4}{5}}$
+5. $\sqrt[4]{\frac{256}{81}}=\boxed{\frac{4}{3}}$
+
+@@
+
+With integer exponents of rational numbers, we are always guaranteed that the result exists
+and is a rational number (since we compute these exponents by multiplying and dividing
+rational numbers, which are closed under these operations). As we will see later, when
+rational exponents are concerned, the result may not exist as a negative number.
+
+### Equations with Exponents
+
+Exponents show up frequently in many real-world problems. Here are some examples.
+
+TK
+
 ## Real Numbers
 
 ### Motivation
@@ -769,92 +908,6 @@ We have notation for the set of two-dimensional vectors where both components ar
 numbers: $\mathbf{R}^2$. The superscript $^2$ denotes that the vector space is two
 dimensional, i.e. has two components.
 
-## Polynomials
-
-### Exponents
-
-Recall that a positive exponent represents repeated multiplication, much like how a positive
-multiplier represents repeated addition. We can express this rule recursively using the
-following identity: \[
-  x^{n+1} = xx^n
-\] which says that if you increase the exponent by $1$ it is the same as multiply one more
-copy of the base.
-
-@@problem
-
-#### Exercise N: Positive Integer Exponents
-
-Evaluate each expression. Write your answer as an integer in literal form.
-
-1. $2^4=$
-2. $3^2=$
-3. $10^6=$
-
-@@
-
-@@solution
-
-##### Solution
-
-1. $2^4=\boxed{16}$
-2. $3^2=\boxed{9}$
-3. $10^6=\boxed{1000000}$
-
-@@
-
-It is frequently useful to extend the system of exponents to non-positive numbers, which can
-be done by applying the recursive rule in the other direction. Thus we can derive that $x^0
-= 1$ and that $x^{-1} = \frac{1}{x}$ for all non-zero values of $x$.
-
-@@problem
-
-#### Exercise N: Negative and Zero Exponents
-
-Evaluate each expression. Write your answer in simplest form as a fraction or as an integer
-literal.
-
-1. ${-1}^{-1}=\boxed{-1}$
-2. $4^{-2}=\boxed{\frac{1}{16}}$
-3. ${999}^0=\boxed{1}$
-4. ${\left(\frac{-17}{4}\right)}^0=\boxed{1}$
-
-@@
-
-A useful application of exponents is in shrinking large numbers to an more humanly
-understandable format. Indeed, we have a poor conception of how large certain numbers are.
-In science, it's common to see numbers way too large to count or way too small to visualize.
-Scientists have developed notation using exponents to make comparing such numbers easier. In
-scientific notation, a number $x$ is written as $y\times 10^n$, where $y$ is a number with
-exactly one non-zero decimal digit before the decimal point, and $n$ is a (positive,
-negative, or zero) exponent.
-
-@@problem
-
-#### Exercise N: Scientific Notation
-
-Express in scientific notation.
-
-1. $1234 = \boxed{1.234\times 10^3}$
-2. $0.000987 = \boxed{9.87\times 10^{-4}}$
-
-@@
-
-With rational exponents, TK (we generalize a different law)
-
-@@problem
-
-#### Exercise N: Fractions, Exponents \& Radicals
-
-Evaluate each expression. Write your answer in simplest form as a fraction, or as an integer
-using the place value system.
-
-1. $4^{\frac{1}{2}}=\boxed{2}$
-2. $9^{\frac{3}{2}}=\boxed{27}$
-3. ${\left(\frac{2}{3}\right)}^3=\boxed{\frac{8}{27}}$
-4. $\sqrt{\frac{16}{25}}=\boxed{\frac{4}{5}}$
-5. $\sqrt[4]{\frac{256}{81}}=\boxed{\frac{4}{3}}$
-
-@@
 
 Of course, as we saw above (TK) some numbers are not rational
 
