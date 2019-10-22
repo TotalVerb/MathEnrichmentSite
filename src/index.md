@@ -8,6 +8,14 @@ This is the class website for the Grand River Chinese School interest class on G
 Olympic Math, taught by [Fengyang Wang](https://wafy.me/). The teaching assistant for this
 class is [Eric Xiao](https://mathlord2.github.io/).
 
+## Lecture 3 (October 19, 2019)
+
+This lecture was taught by Eric Xiao. We discussed some exponent rules and introduced
+polynomial equations.
+
+The [homework](assets/homework/exponents.pdf) and [answers](assets/solutions/exponents.pdf)
+are available.
+
 ## Lecture 2 (October 5, 2019)
 
 We discussed some of the problems from last week’s homework. We then gave many examples of
