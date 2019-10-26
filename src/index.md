@@ -8,6 +8,17 @@ This is the class website for the Grand River Chinese School interest class on G
 Olympic Math, taught by [Fengyang Wang](https://wafy.me/). The teaching assistant for this
 class is [Eric Xiao](https://mathlord2.github.io/).
 
+## Lecture 4 (October 26, 2019)
+
+We discssed square roots of integers that are not perfect squares, like $3$. We found that
+they do not exist as rational numbers. We made a graph showing the relationship between
+rational numbers and their squares, and noted that if we could draw a continuous curve, then
+there should exist a square root of $3$. We define the “real numbers” to represent this
+concept of a continuum.
+
+The [homework](assets/homework/real-numbers.pdf) and
+[answers](assets/solutions/real-numbers.pdf) are available. 
+
 ## Lecture 3 (October 19, 2019)
 
 This lecture was taught by Eric Xiao. We discussed some exponent rules and introduced

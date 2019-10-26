@@ -909,7 +909,31 @@ However, unlike rational numbers, it is not always possible to write real number
 canonical simplest form. Instead, we can use algebraic techniques to make expressions look
 simpler from a human perspective.
 
-TK some examples
+@@problem
+
+#### Exercise 16: A Linear Equation using Real Numbers
+
+Solve the following equation for real number $x$: \[
+   \sqrt{2} x = 2
+\]
+
+@@
+
+@@solution
+
+##### Solution
+
+We divide both sides by $\sqrt{2}$, yielding: \[
+   \frac{\sqrt{2}}{\sqrt{2}} x = \frac{2}{\sqrt{2}}
+\]
+
+Then, simplifying, \[
+   x = \frac{2}{\sqrt{2}} = 2\cdot \frac{1}{\sqrt{2}}
+   = 2\cdot \frac{1}{2^{\frac{1}{2}}} = 2^2\cdot 2^{-\frac{1}{2}}
+   = 2^{1 - \frac{1}{2}} = 2^{\frac{1}{2}} = \boxed{\sqrt{2}}
+\]
+
+@@
 
 ## Sets
 
@@ -970,18 +994,18 @@ TK definition of polynomial
 
 TK rewrite
 
-#### Quadratic Formula
+### Quadratic Formula
 
 TK
 
-#### Factorization
+### Factorization
 
 TK rational roots theorem
 TK remainder theorem
 
 @@problem
 
-##### Exercise 16: Factorization with Real Numbers
+#### Exercise 17: Factorization with Real Numbers
 
 Define $\mathbf{R}[x]$ to be the set of polynomials with real coefficients. In
 $\mathbf{R}[x]$, fully factor the following.
