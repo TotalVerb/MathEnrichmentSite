@@ -680,7 +680,7 @@ never reach any vertical height except $0$! Therefore, there is **no solution** 
 0$. If $b = 0$, then we still have no information about $x$: any rational number will do. In
 this case, there are **multiple solutions**.
 
-## Polynomial Equations
+## Real Numbers
 
 ### Exponents
 
@@ -811,39 +811,105 @@ using the place value system.
 With integer exponents of rational numbers, we are always guaranteed that the result exists
 and is a rational number (since we compute these exponents by multiplying and dividing
 rational numbers, which are closed under these operations). As we will see later, when
-rational exponents are concerned, the result may not exist as a negative number.
+rational exponents are concerned, the result may not exist as a rational number.
 
-### Equations with Exponents
+### Definition of a Real Number
 
-Exponents show up frequently in many real-world problems. Here are some examples.
+In previous sections, we were careful to only discuss square roots and other rational
+exponents when we knew that there was in fact a rational number that worked. In general, we
+cannot assume this is always the case.
 
-TK
+We can give a **proof** that no rational number is equal to $\sqrt{3}$. One way to see this
+is a so-called **proof by contradiction**. In this kind of argument, we assume that
+$\sqrt{3}$ is in fact rational. That is, if $\sqrt{3} = \frac{p}{q}$ for some integers $p$
+and $q\ne 0$ in simplest form, then $\frac{p^2}{q^2} = 3$, so $p^2 = 3q^2$. We see that $3$
+is a factor of the right hand side, so it must also be a factor of the left hand side. But
+the left hand side is a square, so $p=3m$ for some integer $n$. Then $9k^2 = 3q^2$ so $3m^2
+= q^2$. Now $3$ is a factor of the left hand side, so it should also be a factor of the
+right hand side. But the right hand side is a square, so $q=3n$ for some integer $n$. But
+then $\frac{p}{q} = \frac{3m}{3n}$ is clearly not in simplest form, so we have reached an
+absurd state — a contradiction. But of course, this is not possible, so something has gone
+wrong. Our argument is correct, so it must be our assumption that was wrong. The assumption
+we made was that $\sqrt{3}$ is a rational number.
 
-## Real Numbers
+Many of you will probably be uneasy with how we are talking about $\sqrt{3}$ as if it must
+exist, when we have already shown that no rational number squares to $3$. We have already
+complicated things by introducing fractions to the easier world of the integers! If we make
+the claim that $\sqrt{3}$ should exist as a number, then we run the risk of making things
+even more complicated and difficult. We don’t, in general, say that everything which doesn’t
+exist must be a new kind of number (we are happy to say that $\frac{1}{0}$ simply does not
+exist).
 
-### Motivation
+There is in fact a good reason, however, to suggest that $\sqrt{3}$ might be a useful number
+to have. The reason for this is that we can already get very very close to a potential
+square root of $3$! An example of this is the rational number
+$\frac{3900231685776981}{2251799813685248} \approx 2.9999999999999997$. In fact, we can get
+arbitrarily close. A way to visualize this is to see a **graph** that maps numbers to their
+squares.
 
-TK justify using charts of functions, finding inverses
-Some numbers are not rational. TK.
+```julia:algebra/square
+# hideall
+import Plots
+Plots.pyplot()
+Plots.plot(title="Square function plot (integers)",
+           xlabel="x", ylabel="y = x²", legend=false)
+Plots.scatter!(-5:5, (-5:5) .^ 2)
+Plots.savefig(joinpath(@__DIR__, "squareintegers.png"))
 
-$\sqrt{3}$ is not rational. One way to see this is a so-called **proof by contradiction**.
-In this kind of argument, we assume that $\sqrt{3}$ is in fact rational. that if $\sqrt{3} =
-\frac{p}{q}$ for some integers $p$ and $q\ne 0$ in simplest form, then $\frac{p^2}{q^2} =
-3$, so $p^2 = 3q^2$. We see that $3$ is a factor of the right hand side, so it must also be
-a factor of the left hand side. But the left hand side is a square, so $p=3m$ for some
-integer $n$. Then $9k^2 = 3q^2$ so $3m^2 = q^2$. Now $3$ is a factor of the left hand side,
-so it should also be a factor of the right hand side. But the right hand side is a square,
-so $q=3n$ for some integer $n$. But then $\frac{p}{q} = \frac{3m}{3n}$ is clearly not in
-simplest form, so we have reached an absurd state — a contradiction.
+Plots.plot(title="Square function plot (tenths)",
+           xlabel="x", ylabel="y = x²", legend=false)
+Plots.scatter!(-5:0.1:5, (-5:0.1:5) .^ 2)
+Plots.savefig(joinpath(@__DIR__, "squaretenths.png"))
+```
+
+We can start by plotting a point on some axes for integer values. The horizontal distance
+represents the number $x$, which we vary to take on the integer values we want to show. The
+vertical distance represents the square of that number, $x^2$.
+
+![](/assets/algebra/squareintegers.png)
+
+Of course, we can also take the square of rational numbers. We can think of this as
+increasing the precision of our graph by plotting more points, for example, every $0.1$.
+
+![](/assets/algebra/squaretenths.png)
+
+If we imagine that we continue this process, getting more and more precision, we would
+expect this curve to become continuous. We can see that it reaches a vertical value of $3$
+at some point, and we saw earlier that no such rational number point exists. But the curve
+suggests that we can define a new kind of number that is on the number line, and we can get
+close to using rational numbers, but can’t get exactly there. This concept is called a real
+number.
+
+There are many ways to formally define a real number, but it is not necessary to understand
+such a definition to understand what a real number is. Intuitively, we expect real numbers
+to plug the holes in continuous lines that we can draw. We can get as close as we want to a
+real number using rational numbers. In fact we don’t even need to use all rational numbers.
+All finite decimals are rational numbers, and by adding more decimal points, we can get
+closer and closer to any rereal number we are interested in. $\sqrt{3} \approx 1.73$, but an
+even better approximation is $\sqrt{3} \approx 1.732$. We can keep getting more and more
+precise, but we can never reach the number itself because it is not rational (hence not a
+decimal).
+
+<!--
 
 It is sometimes useful to have a proof which does not simply deny that $\sqrt{3}$ is
 rational, but actually gives an algorithm that can tell you for any rational number
 $\frac{p}{q}$ explicitly that $\sqrt{3}$ is greater, or less, and by how much. TK.
 
-TK rewrite
+-->
 
+### Operations on Real Numbers
 
-TK (talk about limits, reals)
+We are able to add, subtract, multiply, and divide (except by zero) real numbers, just as we
+can with rational numbers. (Remember that we can get as close as we want to a real number
+using rational numbers. So it makes sense that real numbers behave almost identically to
+rational numbers!)
+
+However, unlike rational numbers, it is not always possible to write real numbers in a
+canonical simplest form. Instead, we can use algebraic techniques to make expressions look
+simpler from a human perspective.
+
+TK some examples
 
 ## Sets
 
@@ -893,6 +959,40 @@ We have notation for some important sets that we see frequently:
 ### Set Operations
 
 TK: Union, Intersection, Difference
+
+## Polynomials
+
+Exponents show up frequently in many real-world problems. Here are some examples.
+
+TK definition of polynomial
+
+
+
+TK rewrite
+
+#### Quadratic Formula
+
+TK
+
+#### Factorization
+
+TK rational roots theorem
+TK remainder theorem
+
+@@problem
+
+##### Exercise 16: Factorization with Real Numbers
+
+Define $\mathbf{R}[x]$ to be the set of polynomials with real coefficients. In
+$\mathbf{R}[x]$, fully factor the following.
+
+1. $1 - 5x^2$
+2. $-1 + x + x^2$
+3. $3 - 3x - x^2 + x^3$
+
+@@
+
+TK solution
 
 ## Vectors
 
