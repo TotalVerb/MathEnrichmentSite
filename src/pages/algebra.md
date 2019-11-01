@@ -1,4 +1,4 @@
-@def title = "Grade 7/8 Olympic Math, 2019–2020"
+@def title = "Algebra"
 @def hasmath = true
 @def hascode = true
 
@@ -935,54 +935,10 @@ Then, simplifying, \[
 
 @@
 
-## Sets
-
-A set is an unordered collection of mathematical objects. For our purposes, we will use sets
-as a convenient notation to describe the concept of “one of these kinds of things”. One way
-to describe a set is to list every object contained in the set: for instance, $\{3, 5, 9,
-10\}$ is a set of four integers. Note that a set itself is a mathematical object!
-
-Remember that a variable is a letter that represents a mathematical object whose value may
-be unknown. We say “may be unknown” because it is possible we do know the value of a
-variable. For instance, if I write $x := 1$, this means that I define the variable $x$ to
-refer to the number $1$. But I might also say “Let $x$ be an integer (whole number).”; here,
-we do not know the exact value of $x$, but we have a constraint on it: it must be a whole
-number.
-
-We can express certain kinds of constraint with set-membership notation. For instance, to
-say that the value of $x$ must be $1$ or $4$ or $100$, we can write: \[
-  x \in \{1, 4, 100\}
-\]
-
-How would we express the idea that $x$ is an integer with this notation? We obviously cannot
-list out all the integers, since there are infinitely many. Instead we will adopt a notation
-for an infinite set of all integers: $\mathbf{Z}$ (a boldface Z). The reason for the choice
-of the letter Z comes from the German word Zahlen, which means “number”. Thus we can express
-the constraint “$x$ is an integer” using the notation: \[
-  x \in \mathbf{Z}
-\]
-
-Another kind of constraint we often see is an equation. For example, consider: \[
-  \begin{aligned}
-    x &\in \mathbf{Z} \\
-    x^2 &= 4
-  \end{aligned}
-\] which states that $x$ is an integer and further that $x^2 = 4$. This series of
-constraints is actually equivalent to $x \in \{-2, 2\}$, since these are the only two
-integers whose square is $4$.
-
-We have notation for some important sets that we see frequently:
-
- - $\mathbf{N} = \{0, 1, 2, \dots\}$ is the set of natural numbers.
- - $\mathbf{Z} = \{\dots, -2, 1, 0, 1, 2, \dots\}$ is the set of integers (whole
-   numbers).
- - $\mathbf{Q} = \operatorname{Quot}(\mathbf{Z})$ is the set of rational numbers
-   (fractions).
- - $\mathbf{R} = \overline{\mathbf{Q}}$ is the set of real numbers.
-
-### Set Operations
-
-TK: Union, Intersection, Difference
+At this stage, it is helpful to understand some supplementary material on [sets](sets.html).
+This material is on a seperate page because it is not strictly related to what we are
+studying right now about algebra, but the notational conveniences of the material will be
+useful.
 
 ## Polynomials
 
