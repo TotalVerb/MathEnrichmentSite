@@ -52,6 +52,7 @@ the more compact notation \[
 
 We have notation for some important sets that we see frequently:
 
+ - $\varnothing$ is the empty set, which has no members.
  - $\mathbf{N} = \{0, 1, 2, \dots\}$ is the set of natural numbers.
  - $\mathbf{Z} = \{\dots, -2, 1, 0, 1, 2, \dots\}$ is the set of integers (whole
    numbers).
