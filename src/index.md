@@ -8,6 +8,14 @@ This is the class website for the Grand River Chinese School interest class on G
 Olympic Math, taught by [Fengyang Wang](https://wafy.me/). The teaching assistant for this
 class is [Eric Xiao](https://mathlord2.github.io/).
 
+## Lecture 5 (November 2, 2019)
+
+We discussed some basics of sets, including their definition, membership, equality, and
+subset relationships.
+
+The [lesson notes](pub/sets.html), [homework](assets/homework/sets.pdf) and
+[answers](assets/solutions/sets.pdf) are available.
+
 ## Lecture 4 (October 26, 2019)
 
 We discssed square roots of integers that are not perfect squares, like $3$. We found that
