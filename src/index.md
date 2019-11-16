@@ -8,12 +8,15 @@ This is the class website for the Grand River Chinese School interest class on G
 Olympic Math, taught by [Fengyang Wang](https://wafy.me/). The teaching assistant for this
 class is [Eric Xiao](https://mathlord2.github.io/).
 
-## Lecture 5 (November 2, 2019)
+## Lecture 5 (November 2, 2019) and Lecture 6 (November 9, 2019)
 
-We discussed some basics of sets, including their definition, membership, equality, and
-subset relationships.
+On November 2, we discussed some basics of sets, including their definition, membership,
+equality, and subset relationships.
 
-The [lesson notes](pub/sets.html), [homework](assets/homework/sets.pdf) and
+On November 9, we continued the discussion by introducing Venn diagrams, set union, and set
+intersection.
+
+For both weeks, the [lesson notes](pub/sets.html), [homework](assets/homework/sets.pdf) and
 [answers](assets/solutions/sets.pdf) are available.
 
 ## Lecture 4 (October 26, 2019)
@@ -25,7 +28,7 @@ there should exist a square root of $3$. We define the “real numbers” to rep
 concept of a continuum.
 
 The [homework](assets/homework/real-numbers.pdf) and
-[answers](assets/solutions/real-numbers.pdf) are available. 
+[answers](assets/solutions/real-numbers.pdf) are available.
 
 ## Lecture 3 (October 19, 2019)
 

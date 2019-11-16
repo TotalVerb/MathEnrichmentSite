@@ -660,10 +660,11 @@ the value of $x$, we will find a straight line:
 # hideall
 import Plots
 Plots.pyplot()
-Plots.plot(title="Plot of x vs. various linear functions", xlabel="x", ylabel="linear function of x")
-Plots.plot!(x -> 0, label="0x")
-Plots.plot!(x -> x, label="1x")
-Plots.plot!(x -> 3x, label="3x")
+Plots.plot(title="Plot of x vs. various linear functions",
+           xlabel="x", ylabel="linear function of x")
+Plots.plot!(x -> 0, -3.:1e-2:3., label="0x")
+Plots.plot!(x -> x, -3.:1e-2:3., label="1x")
+Plots.plot!(x -> 3x, -3.:1e-2:3., label="3x")
 Plots.savefig(joinpath(@__DIR__, "linearplot.png"))
 ```
 
@@ -942,11 +943,221 @@ useful.
 
 ## Polynomials
 
-Exponents show up frequently in many real-world problems. Here are some examples.
+### Linear Equations, Again
+
+Recall earlier when we solved linear equations of the form $ax = b$, where $a$ and $b$ are
+known rational (or real) numbers, and $x$ is an unknown rational (or real) number. The
+solution is to divide both sides of the equation by $a$, which is valid because $ax$ and $b$
+are different names for the same rational (or real) number. This results in the solution $x
+= \frac{b}{a}$.
+
+Note that many equations that may look different are really linear equations after some
+rearranging. For example, $ax + b = 0$ can be rearranged into the linear equation $ax = -b$.
+$ax + b = c$ can be rearranged into the linear equation $ax = c - b$. We will say that a
+linear equation that looks like $ax + b = 0$ is in “standard form”.
+
+Let’s now look at a graphical method to solve a linear equation in standard form. What we
+will do is rewrite the right hand of the equation from $0$ to another variable $y$. We will
+then draw a graph, similar to what we did earlier when we introduced real numbers. Let us
+first consider the linear equation $2x - 6 = 0$.
+
+```julia:algebra/linearroot
+# hideall
+import Plots
+Plots.pyplot()
+Plots.plot(x -> 2x - 6,
+           -5.0:1e-2:5.0,
+           title="y = 2x - 6",
+           legend=false, framestyle=:origin)
+Plots.scatter!([3], [0])
+Plots.savefig(joinpath(@__DIR__, "linearroot.png"))
+```
+
+![](/assets/algebra/linearroot.png)
+
+Note that the equation $2x - 6 = y$ is more general than $2x - 6 = 0$. If we set $y := 0$,
+then we get back the original equation $2x - 6 = 0$. Therefore, to solve this equation we
+can look on the graphical plot for all the values on the line corresponding to $y = 0$. We
+see that this is where the line intersects with the x-axis. This is called an x-intercept,
+or root, of the function $y = 2x - 6$. From the plot, we see that the only root is $x = 3$,
+which corresponds to the only solution to this equation.
+
+### Two Simple Quadratics
+
+We will now use the knowledge about plots and roots to solve equations which are not linear.
+Let us start with a simple example.
+
+@@problem
+
+#### Exercise 17: Roots of $x^2 - 1$
+
+Plot $y = x^2 - 1$, determine its roots, and use this information to solve the equation $x^2
+= 1$.
+
+@@
+
+@@solution
+
+##### Solution
+
+Here is our plot:
+
+```julia:algebra/quadraticroot
+# hideall
+import Plots
+Plots.pyplot()
+Plots.plot(x -> x^2 - 1,
+           -5.0:1e-2:5.0,
+           title="y = x² - 1",
+           legend=false, framestyle=:origin)
+Plots.scatter!([-1, 1], [0, 0])
+Plots.savefig(joinpath(@__DIR__, "quadraticroot.png"))
+```
+
+![](/assets/algebra/quadraticroot.png)
+
+The roots are marked. They are $x = -1$ and $x = 1$, which correspond to the solutions to
+our equation $x^2 = 1$.
+
+@@
+
+@@problem
+
+#### Exercise 18: Roots of $(x-3)(x+2)$
+
+Without using a plot, determine the roots of $y = (x-3)(x+2)$. These are also solutions to
+the standard form equation $x^2 - x - 6 = 0$; explain why.
+
+@@
+
+@@solution
+
+##### Solution
+
+The roots occur when $y = 0$, so we want to solve $0 = (x-3)(x+2)$. If the product of two
+numbers is $0$, that means either the first number is $0$ or the second number is $0$ (or
+both). Therefore, the set of solutions to the equation $0 = (x-3)(x+2)$ is the union of the
+set of solutions to $x - 3 = 0$ and the set of solutions to $x + 2 = 0$. If $x - 3 = 0$,
+this is a simple linear equation, where $x = 3$ is the only solution. If $x + 2 = 0$, this
+is also a simple linear equation, where $x = -2$ is the only solution.
+
+Therefore, the roots are $x \in \{-2, 3\}$.
+
+Note that by using the distributive property, we find that $(x-3)(x+2) = (x-3)x + (x-3)
+\cdot 2 = x^2 - 3x + 2x - 6 = x^2 - x - 6$. So in fact, $x^2 - x - 6 = (x-3)(x+2)$ for all
+values of $x$. Hence the solutions of the two equations must be the same!
+
+@@
+
+Exercise 18 suggests a general approach to solving equations that involve $x$ and $x^2$
+might be to decompose it into the product of two components which are both linear. This
+process is called factoring. An expression of the form $ax^2 + bx + c$, where $a\ne 0$, $b$,
+and $c$ are known, is called a **quadratic polynomial**, just as $ax + b$ where $a\ne 0$ and
+$b$ are known is called a **linear polynomial**.
+
+### Factoring Quadratics
+
+Suppose we have $(sx - u)(tx - v) = 0$, where $s$, $t$, $u$, and $v$ are known real numbers
+with $s \ne 0 \ne t$. Then we know the solutions are $x \in \left\{\frac{u}{s},
+\frac{v}{t}\right\}$. A quadratic polynomial written this way is easy to solve! Our goal is
+to take a polynomial in standard form, and convert it into this factored form.
+
+It is easier to go backwards. From factored form, we can use distributivity to expand: $(sx
+- u)(tx - v) = st x^2 - (sv + tu)x + uv$. But what we want to figure out is how to turn
+standard form into factored form.
+
+If we can write a polynomial in standard form to look like $stx^2 - (sv + tu)x + uv$, then
+we have found the solutions! The standard form is $ax^2 + bx + c$, $a \ne 0$, so we need: $a
+= st$, $b = - (sv + tu)$, $c = uv$. This is not easy to solve (in fact, it does not have a
+unique solution), so we need to make some simplifications first.
+
+First of all, we need to to fix the fact that the solutions are not unique. We can factor,
+for example, $2x^2 - 2 = (2x-2)(x+1)$, but we can also factor it as $2x^2 - 2 =
+(x-1)(2x+2)$. The roots are of course the same, because the equations $x+1 = 0$ and $2x+2 =
+0$ have the same solutions. But they do not quite look the same. In order to force the
+factored form to be unique, we need to enforce that the linear polynomials are **monic**,
+that is, they have no leading coefficient (multiplier for the $x$ term). Instead, we will
+pull out those coefficients into a single multiplier for the entire quadratic polynomial.
+
+That is, given $(sx - u)(tx - v)$, we would like to turn this into $a(x-u')(x-v')$, where
+$u'$ and $v'$ are new coefficients. How do we calculate $a$, $u'$, and $v'$? Let’s focus on
+the two linear polynomials seperately. We know that $sx - u = s(x - \frac{u}{s})$, by
+distributivity. Similarly, $tx - v = t(x - \frac{v}{t})$. Therefore: \[
+   (sx - u)(tx - v) = s(x - \frac{u}{s})t(x - \frac{v}{t})
+   = st(x - \frac{u}{s})(x - \frac{v}{t})
+\]
+
+Therefore, we can set $a := st$ and $u' := \frac{u}{s}$ and $v' := \frac{v}{s}$. Note that
+the expansion of $a(x-u')(x-v')$ into standard form is $ax^2 - a(u' + v')x + au'v'$. This is
+not actually any different from what we had before, but it looks somewhat closer to what we
+need! We also now see why we have reused $a$ for the leading coefficient in both forms — in
+fact, this leading coefficient will be the same going from monic factored form to standard
+form.
+
+Again, we have not really made much progress — the goal is not to go from a factored form to
+standard form, but actually the opposite! But it turns out the new system of equations is
+easier to solve. We need: $b = -a(u' + v')$, $c = au'v'$. Another way to write this is
+$\frac{b}{a} = -(u' + v')$, and $\frac{c}{a} = u'v'$. That is: after dividing by the leading
+coefficient, we want the constant coefficient to be the product of the solutions, and the
+$x$ coefficient to be the negative sum of the solutions. We can solve this problem with
+trial and error.
+
+@@problem
+
+#### Exercise 19: Factoring a Quadratic via Trial and Error
+
+Using trial and error, factor $25 + 5x - 6x^2$.
+
+@@
+
+@@solution
+
+##### Solution
+
+In standard form, this is $-6x^2 + 5x + 25$. We can divide by the leading coefficient to
+obtain $6 (x^2 - \frac{5}{6}x - \frac{25}{6})$. We want two numbers whose sum is
+$\frac{5}{6}$, and whose product is $-\frac{25}{6}$. One of them will need to be negative!
+Let’s guess that $u'$ and $v'$ will be rational numbers. Write them as $\frac{m}{p}$ and
+$\frac{n}{q}$. We would like $mn = -25$ and $pq = 6$. There are essentially two options for
+$p$ and $q$, such as $1$ and $6$, or $2$ and $3$ (all other options involve negatives or
+just switching around $p$ and $q$). There are then six options for $m$: $-25, -5, -1, 1, 5,
+25$. The value of $n$ corresponding to each of those options would be $1, 5, 25, -25, -5,
+-1$. Now we just need to guess and check!
+
+- If $p=1$, $q=6$, $m=-25$, $n=1$, then the sum is $\frac{-25}{1} + \frac{1}{6} =
+  \frac{-149}{6} \ne \frac{5}{6}$.
+- If $p=1$, $q=6$, $m=-5$, $n=5$, then the sum is $\frac{-5}{1} + \frac{5}{6} =
+  \frac{-25}{6} \ne \frac{5}{6}$.
+- If $p=1$, $q=6$, $m=-1$, $n=25$, then the sum is $\frac{-1}{1} + \frac{25}{6} =
+  \frac{19}{6} \ne \frac{5}{6}$.
+- If $p=1$, $q=6$, $m=1$, $n=-25$, then the sum is $\frac{1}{1} + \frac{-25}{6} =
+  \frac{-19}{6} \ne \frac{5}{6}$.
+- If $p=1$, $q=6$, $m=5$, $n=-5$, then the sum is $\frac{5}{1} + \frac{-5}{6} = \frac{25}{6}
+  \ne \frac{5}{6}$.
+- If $p=1$, $q=6$, $m=25$, $n=-1$, then the sum is $\frac{25}{1} + \frac{-1}{6} =
+  \frac{149}{6} \ne \frac{5}{6}$.
+- If $p=2$, $q=3$, $m=-25$, $n=1$, then the sum is $\frac{-25}{2} + \frac{1}{3} =
+  \frac{-73}{6} \ne \frac{5}{6}$.
+- If $p=2$, $q=3$, $m=-5$, $n=5$, then the sum is $\frac{-5}{2} + \frac{5}{3} = \frac{-5}{6}
+  \ne \frac{5}{6}$.
+- If $p=2$, $q=3$, $m=-1$, $n=25$, then the sum is $\frac{-1}{2} + \frac{25}{3} =
+  \frac{47}{6} \ne \frac{5}{6}$.
+- If $p=2$, $q=3$, $m=1$, $n=-25$, then the sum is $\frac{1}{2} + \frac{-25}{3} =
+  \frac{-47}{6} \ne \frac{5}{6}$.
+- If $p=2$, $q=3$, $m=5$, $n=-5$, then the sum is $\frac{5}{2} + \frac{-5}{3} = \frac{5}{6}$
+  — we’re finally done!
+
+So the factored form is $-6 (x - \frac{5}{2})(x + \frac{5}{3})$.
+
+@@
+
+You might have noticed that this exercise was really tedious. In fact, we will find that
+there is a more direct way to figure out the numbers we want. Nevertheless, this primitive
+method can be useful sometimes when the solutions are less difficult to find.
+
+### Generalizing Factorization
 
 TK definition of polynomial
-
-
 
 TK rewrite
 
@@ -956,12 +1167,14 @@ TK
 
 ### Factorization
 
+Exponents show up frequently in many real-world problems. Here are some examples.
+
 TK rational roots theorem
 TK remainder theorem
 
 @@problem
 
-#### Exercise 17: Factorization with Real Numbers
+#### Exercise 20: Factorization with Real Numbers
 
 Define $\mathbf{R}[x]$ to be the set of polynomials with real coefficients. In
 $\mathbf{R}[x]$, fully factor the following.
