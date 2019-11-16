@@ -1155,15 +1155,127 @@ You might have noticed that this exercise was really tedious. In fact, we will f
 there is a more direct way to figure out the numbers we want. Nevertheless, this primitive
 method can be useful sometimes when the solutions are less difficult to find.
 
+### Quadratic Formula
+
+We will introduce an additional form, besides standard form and factored form, for a
+quadratic polynomial. This new form will be called vertex form.
+
+The motivation for vertex form is that the graph of any quadratic polynomial will look like
+a parabola, either opening upwards or downwards based on the leading coefficient. All
+parabolas have either a minimum or a maximum $y$-value, which is attained at exactly one
+point. This point is called the vertex.
+
+The vertex form of a quadratic polynomial is: $a(x - x_0)^2 + y_0$, where $x_0$ and $y_0$
+are real numbers such that $(x_0, y_0)$ are the coordinates of the vertex.
+
+@@problem
+
+#### Exercise 21: Vertex Form to Standard Form
+
+Rewrite $4(x + 1)^2 - 9$ in standard form.
+
+@@
+
+@@solution
+
+##### Solution
+
+We expand the square using distributivity: \[
+\begin{aligned}
+4(x+1)^2 - 9
+&= 4(x+1)(x+1) - 9 \\
+&= 4(x^2 + 2x + 1) - 9 \\
+&= 4x^2 + 8x + 4 - 9 \\
+&= 4x^2 + 8x - 5
+\end{aligned}
+\] which is in standard form.
+
+@@
+
+@@problem
+
+#### Exercise 22: Solving a Quadratic in Vertex Form
+
+Solve $4(x + 1)^2 - 9 = 0$.
+
+@@
+
+@@solution
+
+First, add $9$ to both sides: \[
+  4(x+1)^2 = 9
+\]
+
+Then, divide both sides by $2$: \[
+  (x+1)^2 = \frac{9}{4}
+\]
+
+We know that there are two possibilities for $x+1$, i.e. \[
+  x + 1 \in \left\{\frac{-3}{2}, \frac{3}{2}\right\}
+\]
+
+Therefore, the two possibilities for $x$ are \[
+  x \in \left\{\frac{-5}{2}, \frac{1}{2}\right\}
+\]
+
+@@
+
+Therefore, we can solve quadratic equations if we put them in vertex form. Based on whether
+the parabola opens upwards or downwards, and where the vertex is relative to the $x$-axis,
+the equation will either have $0$, $1$, or $2$ real solutions.
+
+Now the question becomes: given a quadratic polynomial in standard form, can we put it in
+vertex form? Yes, we can! We just need to use distributivity in a clever way. We know that
+$(x - x_0)^2 = x^2 - 2x_0 x + {x_0}^2$. Therefore, we want to get something which looks like
+this by manipulating the standard form expression. Let’s start with a concrete example:
+
+\[
+  \begin{aligned}
+    4x^2 + 8x - 5
+    &= 4\left(x^2 + 2x\right) - 5 && \text{so we need }x_0 = 1 \\
+    &= 4\left(x^2 + 2x + \textcolor{blue}{1 - 1}\right) - 5 \\
+    &= 4\left(x^2 + 2x + 1\right) - 4 - 5 \\
+    &= 4{(x + 1)}^2 - 9
+  \end{aligned}
+\]
+
+So in fact, it is possible to rewrite a standard form quadratic polynomial into vertex form,
+and this time we did not need any trial and error. In general:
+
+\[
+  \begin{aligned}
+    ax^2 + bx + c
+    &= a\left(x^2 + \frac{b}{a}x\right) + c \\
+    &= a\left(x^2 + 2\frac{b}{2a}x + \textcolor{blue}{\frac{b^2}{4a^2} - \frac{b^2}{4a^2}}\right) + c \\
+    &= a\left(x^2 + 2\frac{b}{2a}x + \frac{b^2}{4a^2}\right) - \frac{b^2}{4a} + c \\
+    &= a{\left(x + \frac{b}{2a}\right)}^2 - \frac{b^2}{4a} + c \\
+    &= a{\left(x - \frac{-b}{2a}\right)}^2 - \frac{b^2 - 4ac}{4a}
+  \end{aligned}
+\]
+
+We can furthermore find the roots of this quadratic polynomial in vertex form, using the
+method above:
+
+\[
+  \begin{aligned}
+    ax^2 + bx + c &= 0 \\
+    a{\left(x - \frac{-b}{2a}\right)}^2 - \frac{b^2 - 4ac}{4a} &= 0 \\
+    a{\left(x - \frac{-b}{2a}\right)}^2 &= \frac{b^2 - 4ac}{4a} \\
+    {\left(x - \frac{-b}{2a}\right)}^2 &= \frac{b^2 - 4ac}{4a^2} \\
+    x - \frac{-b}{2a} &= \pm \frac{\sqrt{b^2 - 4ac}}{2a} \\
+    x &= \frac{-b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a} \\
+    x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+  \end{aligned}
+\]
+
+This formula gives us a way to find the solutions of any quadratic polynomial in standard
+form. We will call it the quadratic formula.
+
 ### Generalizing Factorization
 
 TK definition of polynomial
 
 TK rewrite
-
-### Quadratic Formula
-
-TK
 
 ### Factorization
 
@@ -1174,7 +1286,7 @@ TK remainder theorem
 
 @@problem
 
-#### Exercise 20: Factorization with Real Numbers
+#### Exercise 22: Factorization with Real Numbers
 
 Define $\mathbf{R}[x]$ to be the set of polynomials with real coefficients. In
 $\mathbf{R}[x]$, fully factor the following.
