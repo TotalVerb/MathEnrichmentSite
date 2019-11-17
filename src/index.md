@@ -8,6 +8,16 @@ This is the class website for the Grand River Chinese School interest class on G
 Olympic Math, taught by [Fengyang Wang](https://wafy.me/). The teaching assistant for this
 class is [Eric Xiao](https://mathlord2.github.io/).
 
+## Lecture 7 (November 17, 2019)
+
+We reviewed linear equations, talked about a graphical method of solving them, and then
+introduced quadratic polynomials and their associated equations. We talked about standard
+form and factored form and the trial and error method of converting from standard form to
+factored form.
+
+The [homework](assets/homework/quadratic-equations.pdf) and
+[answers](assets/solutions/quadratic-equations.pdf) are available. 
+
 ## Lecture 5 (November 2, 2019) and Lecture 6 (November 9, 2019)
 
 On November 2, we discussed some basics of sets, including their definition, membership,
