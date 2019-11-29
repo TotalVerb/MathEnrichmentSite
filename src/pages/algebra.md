@@ -1170,7 +1170,7 @@ are real numbers such that $(x_0, y_0)$ are the coordinates of the vertex.
 
 @@problem
 
-#### Exercise 21: Vertex Form to Standard Form
+#### Exercise 20: Vertex Form to Standard Form
 
 Rewrite $4(x + 1)^2 - 9$ in standard form.
 
@@ -1194,7 +1194,7 @@ We expand the square using distributivity: \[
 
 @@problem
 
-#### Exercise 22: Solving a Quadratic in Vertex Form
+#### Exercise 21: Solving a Quadratic in Vertex Form
 
 Solve $4(x + 1)^2 - 9 = 0$.
 
@@ -1271,22 +1271,213 @@ method above:
 This formula gives us a way to find the solutions of any quadratic polynomial in standard
 form. We will call it the quadratic formula.
 
-### Generalizing Factorization
+### Polynomials
 
-TK definition of polynomial
+Let us first define two terms that will be useful. A **monomial** is a whole number power of
+a variable $x$ multiplied by some coefficient. For example, the following are monomials:
 
-TK rewrite
+ - $x$
+ - $3x^2$
+ - $7$
+ - $-\frac{x^{10}}{4}$
 
-### Factorization
+The following are not monomials:
 
-Exponents show up frequently in many real-world problems. Here are some examples.
+ - $2^x$
+ - $x + 2$
+ - $x^{-1}$
 
-TK rational roots theorem
-TK remainder theorem
+A **polynomial** in a single variable $x$ is an expression that involves the sum of some
+monomials (maybe just one). All monomials are also polynomials. For example, the following
+are polynomials:
+
+ - $0$
+ - $x + 2$
+ - $8 + x^2 - 4x^7$
+
+The following are not polynomials:
+
+ - $\frac{x+1}{x-1}$
+ - $1 + 3^x$
+
+A **polynomial equation** in a single variable $x$ is an equation that has polynomials on
+the left and right hand sides. For example, the following are polynomial equations:
+
+ - $7x = 3$
+ - $1 - x - x^2 = \frac{1}{5}$
+ - $x^2 = x^7$
+
+In particular, all quadratic equations and linear equations (which we saw in the previous
+few weeks) are also polynomial equations.
+
+The **degree** of a polynomial is the highest exponent (with a non-zero coefficient). For
+instance, the following polynomials correspond to degrees:
+
+ - $0x^2 + x$ → 1
+ - $5$ → 0
+ - $x^{99} - x^{199}$ → 199
+
+We will define the degree of $0$ to be $-∞$, because there is no term with a a non-zero
+coefficient.
+
+ - $0$ → 1
+
+### Factoring Polynomials
+
+We have already seen how to solve polynomial equations of degrees $1$ and $2$ (they are
+linear equations and quadratic equations respectively). To solve polynomial equations with
+higher degrees, we would ideally want to write the equation in factored form (just like what
+we did with quadratic equations). There are a few tools we can use to do this.
+
+The first tool we will need to learn is called **long division**. The idea behind this
+technique is that if we know one factor of a polynomial, we can get the other factor. This
+is similar to the concept of division for rational numbers that we are familiar with. In
+fact, the technique is exactly the same, except that we use the exponents of the variables
+instead of place values. The idea is to consider only the leading coefficient (coefficients
+corresponding to the highest degree monomial) each time. Let us do some examples of long
+division.
 
 @@problem
 
-#### Exercise 22: Factorization with Real Numbers
+#### Exercise 22: Examples of Polynomial Long Division
+
+Use polynomial long division to compute the following quotients.
+
+1. $\frac{x^2 - 1}{x + 1}$
+2. $\frac{x^3 - 27}{x^2 + 3x + 9}$
+
+@@
+
+@@solution
+
+##### Solution
+
+1. We write \[
+\begin{aligned}
+  x^2 - 1 &= \textcolor{blue}{x(x + 1)} + x^2 - 1 - \textcolor{red}{(x^2 + x)} \\
+  &= x(x + 1) - x - 1 \\
+  &= x(x + 1) - \textcolor{blue}{1(x + 1)} - x - 1 - \textcolor{red}{- x - 1)} \\
+  &= x(x + 1) - 1(x + 1) \\
+  &= (x - 1)(x + 1) \\
+\end{aligned}
+\] and so $\frac{x^2 - 1}{x + 1} = x - 1$.
+
+2. We write \[
+\begin{aligned}
+  x^3 - 27 &= \textcolor{blue}{x(x^2 + 3x + 9)} + x^3 - 27 - \textcolor{red}{x^3 + 3x^2 + 9x)} \\
+  &= x(x^2 + 3x + 9) - 3x^2 - 9x - 27 \\
+  &= x(x^2 + 3x + 9) - \textcolor{blue}{3(x^2 + 3x + 9)} - 3x^2 - 9x - 27 - \textcolor{red}{- 3x^2 - 9x - 27} \\
+  &= x(x^2 + 3x + 9) - 3(x^2 + 3x + 9) \\
+  &= (x - 3)(x^2 + 3x + 9) \\
+\end{aligned}
+\] and so $\frac{x^3 - 27}{x^2 + 3x + 9} = x - 3$.
+
+@@
+
+We now know what to do when we have a factor of the polynomial. How do we figure out The
+next tool that will be useful is called the **remainder theorem**. In fact, the remainder
+theorem is more general (it tells us more) than the version we will look at, but the version
+we will learn is enough for our purposes.
+
+The remainder theorem states that if $p(x)$ is a polynomial, and $a$ is some number, then
+$p(a) = 0$ if and only if $(x - a)$ is a factor of $p(x)$. This means that if we can guess a
+root of a polynomial, then we can find at least one factor of it. Let us look at a few
+examples.
+
+@@problem
+
+#### Exercise 23: Applications of the Remainder Theorem
+
+Find a single factor of each polynomial by using the remainder theorem.
+
+1. $x^7 + 1$
+2. $x^4 + x^3 + x^2 + x$
+3. $10x^{10} - 9x - 1$
+
+@@
+
+@@solution
+
+##### Solution
+
+1. ${(-1)}^7 + 1 = 0$, so by the remainder theorem, $x + 1$ is a factor.
+2. $0^4 + 0^3 + 0^2 + 0 = 0$, so by the remainder theorem, $x$ is a factor.
+3. $10\cdot 1^{10} - 9\cdot 1 - 1 = 0$, so by the remainder theorem, $x - 1$ is a factor.
+
+@@
+
+By combining the remainder theorem with the technique of long division, we can factor some
+polynomials for which we can easily guess a root. But we will want yet a third tool to make
+guessing roots easier, if they are rational. This third tool is called the **rational root
+theorem**. It allows us to use trial and error to guess all the possible rational roots; if
+none of them work, then we know there are no rational roots. (Recall that we did something
+similar to find the rational roots of a quadratic equation.)
+
+The rational root theorem states that if we have a polynomial $p(x)$ with integer
+coefficients, and the leading coefficient is $a$ while the constant term is $c$, then any
+rational root $q = \frac{m}{n}$ (in lowest form) must satisfy the following: $m$ is a factor
+of $c$, and $n$ is a factor of $a$. As a special case, if $a = 1$ (so that the polynomial is
+**monic**) then the rational root theorem is called the integral root theorem, and we have
+that any rational root is an integer and is a factor of $c$. (You might remember the
+integral root theorem from a homework question a few weeks ago.)
+
+@@problem
+
+#### Exercise 24: Applications of the Rational Root Theorem
+
+Use the rational root theorem to find all rational roots of the following polynomials.
+
+1. $x^7 + 1$
+2. $2x^{10} - x^2 - 1$
+3. $6 + 17x - 9x^2 - 17x^3 + 3x^4$
+
+@@
+
+@@solution
+
+##### Solution
+
+1. By the integral root theorem, we need to check only $1$ and $-1$. Only $x = -1$ is a
+   root.
+2. By the rational root theorem, we need to check $1$, $-1$, $\frac{1}{2}$, and
+   $-\frac{1}{2}$. We see that $x = 1$ and $x = -1$ are indeed roots, but the other two are
+   not.
+3. By the rational root theorem, we need to check $\frac{1}{3}$, $\frac{2}{3}$, $1$, $2$,
+   $3$, $6$, and $-\frac{1}{3}$, $-\frac{2}{3}$, $-1$, $-2$, $-3$, and $-6$. If $p(x) = 6 +
+   17x - 9x^2 - 17x^3 + 3x^4$, then:
+
+    - $p\!\left(\frac{1}{3}\right) = \frac{272}{27}$
+    - $p\!\left(\frac{-1}{3}\right) = 0$
+    - $p\!\left(\frac{2}{3}\right) = \frac{80}{9}$
+    - $p\!\left(\frac{-2}{3}\right) = \frac{-100}{27}$
+    - $p(1) = 0$
+    - $p(-1) = 0$
+    - $p(2) = -84$
+    - $p(-2) = 120$
+    - $p(3) = -240$
+    - $p(-3) = 576$
+    - $p(6) = 0$
+    - $p(-6) = 7140$
+
+   Therefore, only $-\frac{1}{3}$, $1$, $-1$, and $6$ are rational roots.
+
+@@
+
+We can now combine our knowledge of the three tools we have learned to factor polynomials:
+
+1. If the polynomial is linear or quadratic, we already have tools to find the roots, and
+   thus factor them (if possible) using the remainder theorem.
+2. If the polynomial has integer coefficients, we can apply the rational root theorem to
+   find all rational roots. This gives us, by the remainder theorem, some linear factors. We
+   then can use long division to find what is left, and then repeat.
+3. Whatever polynomial we have left has no rational roots. This means it is already fully
+   factored into rational polynomials, but there might still be real roots which are not
+   rational. If the polynomial is quadratic, then the quadratic formula can tell us what
+   these roots are, and thus we can fully factor into real polynomials.
+
+@@problem
+
+#### Exercise 25: Factorization with Real Numbers
 
 Define $\mathbf{R}[x]$ to be the set of polynomials with real coefficients. In
 $\mathbf{R}[x]$, fully factor the following.

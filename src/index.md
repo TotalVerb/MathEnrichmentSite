@@ -8,6 +8,14 @@ This is the class website for the Grand River Chinese School interest class on G
 Olympic Math, taught by [Fengyang Wang](https://wafy.me/). The teaching assistant for this
 class is [Eric Xiao](https://mathlord2.github.io/).
 
+## Lecture 8 (November 23, 2019)
+
+This lecture was taught by Eric Xiao. We discussed the vertex form of quadratic equations,
+and used this to derive the quadratic formula.
+
+The [homework](assets/homework/quadratic-formula.pdf) and
+[answers](assets/solutions/quadratic-formula.pdf) are available.
+
 ## Lecture 7 (November 17, 2019)
 
 We reviewed linear equations, talked about a graphical method of solving them, and then
@@ -16,7 +24,7 @@ form and factored form and the trial and error method of converting from standar
 factored form.
 
 The [homework](assets/homework/quadratic-equations.pdf) and
-[answers](assets/solutions/quadratic-equations.pdf) are available. 
+[answers](assets/solutions/quadratic-equations.pdf) are available.
 
 ## Lecture 5 (November 2, 2019) and Lecture 6 (November 9, 2019)
 
