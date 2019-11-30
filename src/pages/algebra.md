@@ -1322,6 +1322,14 @@ coefficient.
 
  - $0$ → 1
 
+The leading coefficient is the coefficient of the highest exponent term. The constant term
+is the coefficient of the $x^0$ term, i.e. the monomial which does not depend on $x$ (hence,
+constant).
+
+ - $0x^2 + x$ → Leading coefficient: $1$, constant term: $0$
+ - $5$ → Leading coefficient: $5$, coconstant term: $5$
+ - $x^{99} - x^{199}$ → Leading coeffcient: $-1$, coconstant term: $0$
+
 ### Factoring Polynomials
 
 We have already seen how to solve polynomial equations of degrees $1$ and $2$ (they are

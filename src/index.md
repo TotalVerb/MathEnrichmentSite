@@ -8,6 +8,15 @@ This is the class website for the Grand River Chinese School interest class on G
 Olympic Math, taught by [Fengyang Wang](https://wafy.me/). The teaching assistant for this
 class is [Eric Xiao](https://mathlord2.github.io/).
 
+## Lecture 9 (November 30, 2019)
+
+We discussed polynomials of degrees higher than 2, and proposed various tools like long
+division, the remainder theorem, and the rational root theorem to help us factor (and hence
+solve) these polynomials.
+
+The [homework](assets/homework/polynomials.pdf) and
+[answers](assets/solutions/polynomials.pdf) are available.
+
 ## Lecture 8 (November 23, 2019)
 
 This lecture was taught by Eric Xiao. We discussed the vertex form of quadratic equations,
