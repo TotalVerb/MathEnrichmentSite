@@ -1364,7 +1364,7 @@ Use polynomial long division to compute the following quotients.
 \begin{aligned}
   x^2 - 1 &= \textcolor{blue}{x(x + 1)} + x^2 - 1 - \textcolor{red}{(x^2 + x)} \\
   &= x(x + 1) - x - 1 \\
-  &= x(x + 1) - \textcolor{blue}{1(x + 1)} - x - 1 - \textcolor{red}{- x - 1)} \\
+  &= x(x + 1) - \textcolor{blue}{1(x + 1)} - x - 1 - \textcolor{red}{(- x - 1)} \\
   &= x(x + 1) - 1(x + 1) \\
   &= (x - 1)(x + 1) \\
 \end{aligned}
@@ -1372,9 +1372,9 @@ Use polynomial long division to compute the following quotients.
 
 2. We write \[
 \begin{aligned}
-  x^3 - 27 &= \textcolor{blue}{x(x^2 + 3x + 9)} + x^3 - 27 - \textcolor{red}{x^3 + 3x^2 + 9x)} \\
+  x^3 - 27 &= \textcolor{blue}{x(x^2 + 3x + 9)} + x^3 - 27 - \textcolor{red}{(x^3 + 3x^2 + 9x)} \\
   &= x(x^2 + 3x + 9) - 3x^2 - 9x - 27 \\
-  &= x(x^2 + 3x + 9) - \textcolor{blue}{3(x^2 + 3x + 9)} - 3x^2 - 9x - 27 - \textcolor{red}{- 3x^2 - 9x - 27} \\
+  &= x(x^2 + 3x + 9) - \textcolor{blue}{3(x^2 + 3x + 9)} - 3x^2 - 9x - 27 - \textcolor{red}{(- 3x^2 - 9x - 27)} \\
   &= x(x^2 + 3x + 9) - 3(x^2 + 3x + 9) \\
   &= (x - 3)(x^2 + 3x + 9) \\
 \end{aligned}
@@ -1496,7 +1496,70 @@ $\mathbf{R}[x]$, fully factor the following.
 
 @@
 
-TK solution
+@@solution
+
+##### Solution
+
+1. This is a quadratic, and it is already essentially in vertex form. We can solve it by the
+   technique we learned earlier: \[
+   \begin{aligned}
+     1 - 5x^2 &= 0 \\
+     1 &= 5x^2 \\
+     \frac{1}{5} &= x^2 \\
+     x &= \pm\frac{1}{\sqrt{5}}
+   \end{aligned}
+   \]
+
+   Therefore the factors are $1 - 5x^2 = -(\sqrt{5}x - 1)(\sqrt{5}x + 1)$, where note that
+   we needed to add the $-1$ to ensure the leading coefficient is still correct.
+
+2. This is a quadratic, and so we can use the quadratic formula to find the roots: \[
+   \begin{aligned}
+     x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+     &= \frac{-1 \pm \sqrt{1 + 4\cdot 1\cdot 1}}{2} \\
+     &= \frac{-1 \pm \sqrt{5}}{2}
+   \end{aligned}
+   \]
+
+   Thus, the factors are $-1 + x + x^2 = \left(x - \frac{-1 + \sqrt{5}}{2}\right)\left(x -
+   \frac{-1 - \sqrt{5}}{2}\right)$. The leading coefficient is already correct and so we do
+   not need to multiply by a constant.
+
+3. Since the coefficients are integers, we should consider the rational root theorem. The
+   leading coefficient is $1$ and the constant term is $3$, so we only need to check $-3$,
+   $-1$, $1$, and $3$. We evaluate:
+
+    - $3 - 3\cdot (-3) - {(-3)}^2 + {(-3)}^3 = -24$
+    - $3 - 3\cdot (-1) - {(-1)}^2 + {(-1)}^3 = 4$
+    - $3 - 3\cdot 1 - 1^2 + 1^3 = 0$
+    - $3 - 3\cdot 3 - 3^2 + 3^3 = 12$
+
+   Thus, the only rational root is $x = 1$. We can now use long division to remove the
+   factor of $(x - 1)$: \[
+   \begin{aligned}
+     3 - 3x - x^2 + x^3
+     &= \textcolor{blue}{x^2(-1 + x)} + 3 - 3x - x^2 + x^3 - \textcolor{red}{(-x^2 + x^3)} \\
+     &= x^2(-1 + x) + 3 - 3x \\
+     &= \textcolor{blue}{-3(-1 + x)} + x^2(-1 + x) + 3 - 3x - \textcolor{red}{(3 - 3x)} \\
+     &= (-3 + x^2)(-1 + x)
+   \end{aligned}
+   \]
+
+   We are not quite done, because $x^2 - 3$ is not irreducible. We know that this is a
+   quadratic polynomial in vertex form, so we can solve it easily: \[
+   \begin{aligned}
+     -3 + x^2 &= 0 \\
+     x^2 &= 3 \\
+     x &= \pm \sqrt{3}
+   \end{aligned}
+   \]
+
+   Thus, we know that $x^2 - 3 = (x - \sqrt{3})(x + \sqrt{3})$. Hence we have found a full
+   factorization of the original polynomial: \[
+     3 - 3x - x^2 + x^3 = (-1 + x)(\sqrt{3} + x)(-\sqrt{3} + x)
+   \]
+
+@@
 
 ## Vectors
 
