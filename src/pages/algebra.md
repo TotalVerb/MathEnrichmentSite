@@ -1561,7 +1561,33 @@ $\mathbf{R}[x]$, fully factor the following.
 
 @@
 
-## Vectors
+## Systems of Equations
+
+Previously, we have been looking at polynomial equations with one unknown variable. Recall
+the simplest such equations are linear equations of the form $ax = b$, where $a$ and $b$ are
+known real (or rational) numbers.
+
+We will now extend our attention to polynomial equations when we have multiple unknown
+variables. For example, suppose that neither $x$ nor $y$ are known, and we have a linear
+equation $ax + by = c$. What are the solutions to this linear equation?
+
+One way to solve this problem is to choose any value for $x$, and then we see that $ax$
+becomes a known value. For instance, suppose $x = 1$. Thus we can now solve the linear
+equation $by = c - a$ where the right hand side is known. We can see that in this case, if
+$b \ne 0$, then $y = \frac{c - a}{b}$. If $b = 0$, then there are either no solutions or
+infinitely many solutions for $y$, depending on whether $c - a = 0$ also.
+
+However, the number of possible values to choose for $x$ is very high — in fact, usually
+there are infinitely many possible values for $x$ that work! This implies that we are not
+looking for only a single solution, but instead we want to describe the shape of all
+possible solutions. We have figured out one of the solutions, so if we can describe how the
+solution **changes** when we change the assumed value of $x$, then this would be enough. The
+result will be some geometric shape that passes through our particular solution.
+
+In order to visualize these shapes geometrically, we shall introduce the concept of a
+vector, which previously we have touched on but not discussed in detail.
+
+### Vectors
 
 An **ordered pair** is two things written in an order. For example, $(3, 4)$ is an ordered
 pair of numbers. Ordered pairs frequently represent a single concept that is made of two
@@ -1587,6 +1613,90 @@ and the choices of directions are collectively called a **basis**.)
 We have notation for the set of two-dimensional vectors where both components are real
 numbers: $\mathbf{R}^2$. The superscript $^2$ denotes that the vector space is two
 dimensional, i.e. has two components.
+
+It will become more clear later why we have defined this concept, which currently seems to
+be just a fancy way of writing down two numbers at once. First, we shall define some
+operations on vectors, which will have geometric meaning:
+
+- Let $[a, b] + [c, d] = [a + c, b + d]$ be the **sum** of two vectors. The geometric
+  meaning is that we displace ourselves first by $a$ in the first basis direction and by
+  $b$ in the second basis direction. Then, we displace ourselves from the new location by
+  $c$ in the first basis direction and by $d$ in the second basis direction.
+- Let $a[b, c] = [ab, ac]$ be a **scalar multiplication** of a vector by real (rational)
+  number $a$, which is called a scalar because it is not a vector. The geometric meaning is
+  that we displace ourselves in the same direction (if $a > 0$) or in the opposite direction
+  (if $a < 0$) as $[b, c]$, but with a step size of $a$ times.
+
+### Homogeneous Linear Equations
+
+Let us now return to considering the linear equations with two unknown variables. A
+**homogeneous linear equation** is an equation of the form $ax + by = 0$. Note that the only
+change from the more general linear equations that we have looked at is that we are forcing
+the $c$ in $ax + by = c$ to be $0$. For simplicity, let us assume $a \ne 0 \ne b$ (this
+assumption is not really required, but if $a = 0$ or $b = 0$, then this case is degenerate
+because we know that one of the unknown variables is not important, so we can just solve a
+linear equation with the other unknown). What do the solutions to this kind of equation look
+like? One solution that comes to mind is $[x, y] = [0, 0]$, but this solution does not tell
+us where to look for other solutions. Therefore, it would be useful to find solutions that
+are not $[0, 0]$. We shall investigate first a concrete example.
+
+@@problem
+
+#### Exercise 26: Solutions to a Homogeneous Linear Equation
+
+Describe all the rational solutions $[x, y]$ to $3x + 2y = 0$.
+
+@@
+
+@@solution
+
+##### Solution
+
+Recall the trick that we talked about earlier: if we pick some arbitrary value of $x$ and
+then solve for $y$, then we will find a particular solution (but there may be others). We
+should not try $x = 0$ because that will give us the solution $[x, y] = [0, 0]$, which we
+already know about and which is not interesting.
+
+Let’s choose $x = 2$ to make calculations simpler (do you see why)? Then we have $3\cdot 2 +
+2y = 0$ and therefore, by rearranging, $2y = -6$. Therefore $y = -3$ is a solution, when $x
+= 2$. Hence $[x, y] = [2, -3]$ is a solution to the original equation.
+
+Now we will use the fact that the equation is homogeneous to find all other solutions! How?
+Note that if $3\cdot 2 + 2\cdot (-3) = 0$, then $5(3\cdot 2 + 2\cdot (-3)) = 5 \cdot 0 = 0$.
+In fact, for any rational number $q$, we always have $q(3\cdot 2 + 2\cdot (-3)) = q\cdot 0 =
+0$. Using distrubutivity and commutativity of multiplication, we find that $3(2q) + 2(-3q) =
+0$. But this looks exactly like the original equation! That is, if $[x, y] = [2, -3]$ is a
+solution, then $[x, y] = [2q, -3q]$ is a solution also. Does the right hand side look
+familar? That’s right: it is the scalar mumultiplication by $q$ of vector $[2, -3]$.
+
+This gives us a general fact about solutions to homogeneous linear equations: if $[x, y]$ is
+a solution, then any rational (or real) scalar multiple of it is a solution to the
+homogeneous equation also. This is why we have decided to first consider the simpler
+homogeneous case: as soon as we find one non-zero solution, we have found infinitely many
+non-zero solutions. That is, all vectors $[x, y] = q[2, -3]$ are solutions.
+
+In fact, we have found all of them. One way to see this is to notice
+that if we were somehow missing one solution $[u, v]$, then first note $u \ne 0$ (since
+otherwise, only $[0, 0]$ is a solution, but $[u, v] = [0, 0] = 0[2, -3]$ is already
+accounted for). Since $u \ne 0$, therefore $\frac{2}{u} [u, v]$ is also a solution (by the
+same argument as above, since scalar multiples of homogeneous solutions are also homogeneous
+solutions). Hence, by simplifying, $[2, \frac{2v}{u}]$ is a solution. We know that $3\cdot 2
++ 2\cdot (-3) = 0$, and now the new solution tells us that $3\cdot 2 + 2\cdot (\frac{2v}{u})
+= 0$. Taking the difference of these equations, we see that $2\cdot (-3) =
+2\cdot(\frac{2v}{u})$. Hence, $-3 = \frac{2v}{u}$, i.e. $v = -\frac{3}{2}u$. But then the
+solution we were missing is actually $[u, -\frac{3}{2}u] = \frac{u}{2}[2, -3]$, which it
+turns out we weren’t missing after all!
+
+@@
+
+This exercise generalizes to an important property: all solutions to a linear homogeneous
+equation (where the coefficients are not both zero) are scalar multiples of a particular
+non-zero solution. We can plot these as a straight line going through the origin. The
+particular non-zero solution we found is any arbitrary direction on this line.
+
+### Relationship to Systems of Equations
+
+TK
 
 
 ## Sums
