@@ -619,7 +619,7 @@ Plots.scatter!(2015:2019, 90:10:130, label="Number of raccoons")
 Plots.savefig(joinpath(@__DIR__, "raccoons.png"))
 ```
 
-![](/assets/algebra/raccoons.png)
+![](/assets/pages/algebra/code/algebra/raccoons.png)
 
 If the current trend continues, by what year will there be 180 raccoons in Raccoonville?
 
@@ -668,7 +668,7 @@ Plots.plot!(x -> 3x, -3.:1e-2:3., label="3x")
 Plots.savefig(joinpath(@__DIR__, "linearplot.png"))
 ```
 
-![](/assets/algebra/linearplot.png)
+![](/assets/pages/algebra/code/algebra/linearplot.png)
 
 The solution to $ax=b$, if one exists, is simply where this straight line reaches a vertical
 height of $b$. We saw a general technique to do this if $a\ne 0$: we can multiply both sides
@@ -867,12 +867,12 @@ We can start by plotting a point on some axes for integer values. The horizontal
 represents the number $x$, which we vary to take on the integer values we want to show. The
 vertical distance represents the square of that number, $x^2$.
 
-![](/assets/algebra/squareintegers.png)
+![](/assets/pages/algebra/code/algebra/squareintegers.png)
 
 Of course, we can also take the square of rational numbers. We can think of this as
 increasing the precision of our graph by plotting more points, for example, every $0.1$.
 
-![](/assets/algebra/squaretenths.png)
+![](/assets/pages/algebra/code/algebra/squaretenths.png)
 
 If we imagine that we continue this process, getting more and more precision, we would
 expect this curve to become continuous. We can see that it reaches a vertical value of $3$
@@ -973,7 +973,7 @@ Plots.scatter!([3], [0])
 Plots.savefig(joinpath(@__DIR__, "linearroot.png"))
 ```
 
-![](/assets/algebra/linearroot.png)
+![](/assets/pages/algebra/code/algebra/linearroot.png)
 
 Note that the equation $2x - 6 = y$ is more general than $2x - 6 = 0$. If we set $y := 0$,
 then we get back the original equation $2x - 6 = 0$. Therefore, to solve this equation we
@@ -1014,7 +1014,7 @@ Plots.scatter!([-1, 1], [0, 0])
 Plots.savefig(joinpath(@__DIR__, "quadraticroot.png"))
 ```
 
-![](/assets/algebra/quadraticroot.png)
+![](/assets/pages/algebra/code/algebra/quadraticroot.png)
 
 The roots are marked. They are $x = -1$ and $x = 1$, which correspond to the solutions to
 our equation $x^2 = 1$.
