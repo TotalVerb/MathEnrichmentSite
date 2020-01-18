@@ -1627,7 +1627,7 @@ operations on vectors, which will have geometric meaning:
   that we displace ourselves in the same direction (if $a > 0$) or in the opposite direction
   (if $a < 0$) as $[b, c]$, but with a step size of $a$ times.
 
-### Homogeneous Linear Equations
+### Homogeneous Linear Equations (Two Unknowns)
 
 Let us now return to considering the linear equations with two unknown variables. A
 **homogeneous linear equation** is an equation of the form $ax + by = 0$. Note that the only
@@ -1690,9 +1690,180 @@ turns out we weren’t missing after all!
 @@
 
 This exercise generalizes to an important property: all solutions to a linear homogeneous
-equation (where the coefficients are not both zero) are scalar multiples of a particular
-non-zero solution. We can plot these as a straight line going through the origin. The
-particular non-zero solution we found is any arbitrary direction on this line.
+equation in two variables (where the coefficients are not both zero) are scalar multiples of
+a particular non-zero solution. We can plot these as a straight line going through the
+origin. The particular non-zero solution we found is any arbitrary direction on this line.
+
+### Vector Spaces
+
+Recall from before that we saw that the solutions to a homogeneous linear equation in two
+variables are all scalar multiples of a particular non-zero solution. We will now increase
+the number of variables and seek to find a similar result. First, a useful concept is that
+of a vector space.
+
+A rational (or real) **vector space** is a set of vectors $V$, possibly infinite, such that:
+
+1. A **zero vector** is in the set, i.e. $\mathbf{0} \in V$
+2. For any two vectors $u$, $v$ in the set, their sum $u+v$ is in the set
+3. For any vector $v$ in the set, all rational (or real, if we are talking about a real
+   vector space) scalar multiples $qv$ are in the set
+
+In other words, within a vector space we can always add vectors, or multiply vectors by
+rational (or real) numbers, without leaving the vector space. For instance, all
+two-dimensional rational vectors $V = \mathbf{Q}^2 = \{[a, b]: a\in \mathbf{Q},
+b\in\mathbf{Q}\}$ form a vector space (we can add and subtract these without leaving $V$).
+Another rational vector space is the singleton set $V = \{[0, 0]\}$. There is only one
+vector in here (the zero vector), but any combination of sums and scalar multiples with the
+zero vector will result in a zero vector, so this is still a vector space.
+
+However, the set $U = \{[0, 0], [1, 0]\}$ is not a vector space. This is because, for
+example, the sum $[1, 0] + [1, 0] = [2, 0]$ is not in $U$.
+
+@@problem
+
+#### Exercise 27: Vector Space of Solutions
+
+Let $V$ be the set of all rational solutions $[x, y]$ to $x - y = 0$. Show that $V$ is a
+vector space.
+
+@@
+
+@@solution
+
+##### Solution
+
+We need to check three things:
+
+1. Is $[0, 0] \in V$? This is true if $[x, y] = [0, 0]$ is a solution. Indeed, $x - y = 0 -
+   0 = 0$, so it is a solution and thus $[0, 0] \in V$.
+2. Say that $[a, b] \in V$ and $[c, d] \in V$. This means $a - b = 0$ and $c - d = 0$. If we
+   add these equations, we get $a - b + c - d = 0$, which we can rearrange to $(a + c) - (b
+   + d) = 0$. Hence, $[a + c, b + d] \in V$ also.
+3. Say that $[a, b] \in V$ and $q \in \mathbf{Q}$ is a rational number. This means $a - b =
+   0$. If we multiply this equation by $q$, we get $qa - qb = 0$. Hence, $[qa, qb] \in V$
+   also. (Remember, this is what we said about solutions to homogeneous linear equations
+   last time too!)
+
+Therefore, $V$ is in fact a vector space.
+
+@@
+
+What Exercise 27 tells us is that when homogeneous linear equations in two variables have
+solutions, those solutions form a vector space. In fact, we do not have to limit ourselves
+to two variables. It is an important fact that the set of solutions to homogeneous linear
+equations in any number of unknown variables always forms a vector space: we can always add
+solutions, or multiply them by rational numbers, and get another solution.
+
+We can often describe vector spaces by giving just a few vectors, and saying that all the
+other vectors are going to be **linear combinations**: i.e. sums and scalar multiples, and
+sums of scalar multiples. If $u \in V$ and $v \in V$, we can see that all vectors that look
+like $au + bv \in V$ also (this is just by applying the 2nd and 3rd rules together). In
+these cases, we will write that $V = \operatorname{span}(u, v)$, to mean that all vectors in
+$V$ are in fact linear combinations of $u$ and $v$. Hence, we now have a brief notation to
+describe the solution to homogeneous linear equations.
+
+@@problem
+
+#### Exercise 28: Solutions to Homogeneous Linear Equations
+
+Describe all rational solutions to each homogeneous linear equation. Use spans to describe
+infinite vector spaces.
+
+1. $x\in\mathbf{Q}$ such that $2x = 0$ (Hint: this vector space contains only one vector)
+2. $[x, y]\in\mathbf{Q}^2$ such that $2x + \frac{1}{5}y = 0$
+3. $[x, y, z]\in\mathbf{Q}^3$ such that $2x + \frac{1}{5}y + \frac{1}{3}z = 0$ (Hint: this
+   is a span of two vectors that do not point in the same or opposite direction)
+
+@@
+
+@@solution
+
+##### Solution
+
+1. This is a linear equation that we have seen already, and the only solution is $x = 0$.
+   Therefore the set of solutions is $\{0\}$, which is a vector space.
+2. We have seen how to solve these earlier: fix some non-zero value of $x$, such as $x = 1$.
+   Then we need to solve $\frac{1}{5}y = -2$, which has solution $y = -10$. Therefore, $[1,
+   -10]$ is a particular non-zero solution, and all the solutions are scalar multiples of
+   it. Hence, the set of solutions is $\operatorname{span}([1, -10])$. (Note that all the
+   non-zero scalar multiples of this vector can also be used to describe this vector space,
+   so our solution could look different, but would be mathematically the same.)
+3. Note that if we set $z = 0$, we get the same equation as last time. So $[1, -10, 0]$ is a
+   particular non-zero solution. However, since we have more than two variables, the set of
+   solutions won’t be all scalar multiples of this. We need to find another solution that
+   does not point in the same direction (so, for example, not $[2, -20, 0]$). Let’s set (for
+   example) $z = 6$, $y = 0$ to guarantee this. Then $2x = -2$. Hence
+   $[-1, 0, 6]$ is another nonzero particular solution. Assuming the hint is true, the
+   answer is then $\operatorname{span}([1, -10, 0], [-1, 0, 6])$. (Note that there are many
+   ways to describe the same vector space, so if we picked different assumptions our
+   solution would look different, but would be mathematically the same.)
+
+@@
+
+### Inhomogeneous Linear Equations
+
+We have spent a lot of time talking about homogeneous linear equations, where the right hand
+side is $0$. The solution to homogeneous linear equations is always a vector space. Now we
+will shift our attention to linear equations in general, including those where the right
+hand side is not $0$. How do we solve such systems? Let us start with an example, $x + y =
+2$. There is an obvious solution $[x, y] = [1, 1]$, but of course there are infinitely many
+other solutions. How can we describe them?
+
+The most important observation is that this inhomogeneous equation is related to the
+homogeneous linear equation $x + y = 0$. Let the vector space of solutions to this equation
+be $V$. Any homogeneous solution $[a, b] \in V$ can be added to $[1, 1]$ to get another
+solution to $x + y = 2$! That is, $a + 1 + b + 1 = (a + b) + (1 + 1) = 0 + 2 = 2$. Here we
+see why homogeneous linear equations are important: we can always translate by a homogeneous
+solution to $x + y = 0$ without changing the value of $x + y$.
+
+Therefore, we can describe all the solutions to $x + y = 2$ by simply saying $[x, y] = [1,
+1] + V$. What does this mean? We mean that we start at $[1, 1]$ (some particular solution),
+and then translate by any solution in $V$. Since the solution to the homogeneous equation is
+$[x, y] \in V = \operatorname{span}([1, -1])$, another way to write it is: \[
+  x + y = 2 \iff [x, y] = [1, 1] + q[1, -1] \text{ for some }q \in\mathbf{Q}
+\]
+
+@@problem
+
+#### Exercise 29: Solutions to an Inhomogeneous Linear Equation
+
+Find all rational solutions to $\frac{3}{2}x + \frac{2}{3}y + \frac{1}{2}z = 2$. Hint:
+answer should include a span of $2$ vectors not in the same or opposite direction
+
+@@
+
+@@solution
+
+##### Solution
+
+First we will solve the homogeneous linear equation $\frac{3}{2}x + \frac{2}{3}y +
+\frac{1}{2}z = 0$. We expect two directions of freedom, because there are three variables.
+So we can make two different assumptions to get vectors which are guaranteed to not be in
+the same direction.
+
+An example of some convenient assumptions (to simplify the math) are: $x = 0$, $y = 3$ and
+$x = 2$, $y = 0$. Under the first assumption, we have $\frac{1}{2}z = -2$, so $z = -4$.
+Under the second assumption, we have $\frac{1}{2}z = -3$, so $z = -6$. Hence the two different
+non-zero solutions we get are:
+
+- $[x, y, z] = [0, 3, -4]$
+- $[x, y, z] = [2, 0, -6]$
+
+Hence, the vector space of solutions to this inhomogeneous linear equation is \[
+  V = \operatorname{span}([0, 3, -4], [2, 0, -6])
+\]
+
+The next step is to find a particular solution to the inhomogeneous equation  $\frac{3}{2}x
++ \frac{2}{3}y + \frac{1}{2}z = 2$. Once again, there are infinitely many of these, so we
+will make an assumption that simplifies the math. Let $x = 0$ and $y = 0$. Then $z = 4$ is
+the only solution. So $[0, 0, 4]$ is a particular solution.
+
+Hence, the general solution is: \[
+  \frac{3}{2}x + \frac{2}{3}y + \frac{1}{2}z = 2 \iff [x, y, z] = [0, 0, 4] + p[0, 3, -4] +
+  q[2, 0, -6]\text{ for some }p\in\mathbf{Q}, q\in\mathbf{Q}
+\]
+
+@@
 
 ### Relationship to Systems of Equations
 
