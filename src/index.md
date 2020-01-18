@@ -8,6 +8,13 @@ This is the class website for the Grand River Chinese School interest class on G
 Olympic Math, taught by [Fengyang Wang](https://wafy.me/). The teaching assistant for this
 class is [Eric Xiao](https://mathlord2.github.io/).
 
+## Lecture 12 (January 18, 2019)
+
+We discussed vector spaces and solutions to homogeneous linear equations in general
+(including in more than two variables). We also discussed how to solve inhomogeneous linear
+equations. The [homework and answers](pub/homework/vector-spaces.html) are available
+(solutions are hidden if you print).
+
 ## Lecture 11 (January 11, 2019)
 
 This lecture was taught by Eric Xiao. We discussed vectors, in particular their sums and
