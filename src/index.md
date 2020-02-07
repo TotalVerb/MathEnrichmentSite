@@ -17,6 +17,10 @@ We discussed vector spaces and solutions to homogeneous linear equations in gene
 equations. The [homework and answers](pub/homework/vector-spaces.html) are available
 (solutions are hidden if you print).
 
+This is the last lecture of the term, and we will not be continuing the subject in the next
+term (as there may be new students in the class). You may read the [algebra lesson
+plan](pub/algebra.html)  as a reference.
+
 ## Lecture 11 (January 11, 2019)
 
 This lecture was taught by Eric Xiao. We discussed vectors, in particular their sums and

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Un-minified script so that can play a bit -->
+<link rel="stylesheet" href="/libs/katex/katex.min.css">
+     
+   <!-- Syntax highlighting via Prism, note: restricted langs -->
+<link rel="stylesheet" href="/libs/highlight/github.min.css">
+   
+  <link rel="stylesheet" href="https://wumss.github.io/rabbit/rabbit.min.css"/>
+  <link rel="stylesheet" href="/css/judoc.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/infra/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/infra/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/infra/favicon-16x16.png">
+  <link rel="manifest" href="/assets/infra/site.webmanifest">
+   <title>Enumeration</title>  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68884109-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-68884109-2');
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <input id="nav-trigger" class="nav-trigger" type="checkbox" checked="checked">
+      <ul>
+        <li><a href="/">Home</a></li><!--
+     --><li><a href="http://grandriverchineseschool.com/">GRCS Site</a></li>
+      </ul>
+      <label for="nav-trigger"></label>
+    </nav>
+  </header>
+
+  <main>
+<!-- Content appended here -->
+
+<div class="jd-content">
+<h1 id="enumeration"><a href="/pub/enumeration.html#enumeration">Enumeration</a></h1>
+<div class="jd-toc"><ol><li><a href="/pub/enumeration.html#enumeration">Enumeration</a><ol><li><a href="/pub/enumeration.html#introduction">Introduction</a><ol><li><a href="/pub/enumeration.html#first_steps">First Steps</a><ol><li><a href="/pub/enumeration.html#exercise_1_counting_whole_numbers">Exercise 1: Counting Whole Numbers</a><ol><li><a href="/pub/enumeration.html#solution">Solution</a></li><li><a href="/pub/enumeration.html#solution_incorrect">Solution &#40;Incorrect&#41;</a></li></ol></li></ol></li><li><a href="/pub/enumeration.html#strategy_systematic_search">Strategy: Systematic Search</a></li></ol></li><li><a href="/pub/enumeration.html#the_fencepost_problem">The Fencepost Problem</a></li></ol></li></ol></div>
+<h2 id="introduction"><a href="/pub/enumeration.html#introduction">Introduction</a></h2>
+<h3 id="first_steps"><a href="/pub/enumeration.html#first_steps">First Steps</a></h3>
+<p>Enumeration is about counting things. We ask ourselves the question “how many &#91;...&#93;” and try to solve it using a variety of techniques. In particular, we count mathematical objects with a certain property. For example, consider the simple exercise below.</p>
+<div class="problem"><h4 id="exercise_1_counting_whole_numbers"><a href="/pub/enumeration.html#exercise_1_counting_whole_numbers">Exercise 1: Counting Whole Numbers</a></h4>
+<p>How many whole numbers are there between <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12</mn></mrow><annotation encoding="application/x-tex">12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>21</mn></mrow><annotation encoding="application/x-tex">21</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">1</span></span></span></span> &#40;inclusive, i.e. including both <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12</mn></mrow><annotation encoding="application/x-tex">12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>21</mn></mrow><annotation encoding="application/x-tex">21</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">1</span></span></span></span>&#41;?</div>
+<div class="solution"><h5 id="solution"><a href="/pub/enumeration.html#solution">Solution</a></h5>
+<p>There are <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span>. In some cases, like this one, we can solve these problems simply by listing out all the allowed possibilities. They are <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12</mn></mrow><annotation encoding="application/x-tex">12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn></mrow><annotation encoding="application/x-tex">13</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>14</mn></mrow><annotation encoding="application/x-tex">14</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">4</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn></mrow><annotation encoding="application/x-tex">15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>16</mn></mrow><annotation encoding="application/x-tex">16</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">6</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>17</mn></mrow><annotation encoding="application/x-tex">17</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">7</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn></mrow><annotation encoding="application/x-tex">18</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">8</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>19</mn></mrow><annotation encoding="application/x-tex">19</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">9</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>21</mn></mrow><annotation encoding="application/x-tex">21</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">1</span></span></span></span>. In other cases, this will be more difficult, so we will need more efficient techniques.</div>
+<p>The first step to understanding enumeration is to understand what it means to count <strong>all</strong> mathematical objects with a certain property. There are several common mistakes that we can make:</p>
+<ul>
+<li><p><strong>Omission</strong>: We forgot to count a mathematical object with the desired property.</p>
+</li>
+<li><p><strong>False positive</strong>: We counted a mathematical object without the desired property.</p>
+</li>
+<li><p><strong>Double counting</strong>: We counted the same mathematical object more than once.</p>
+</li>
+</ul>
+<p>For instance, here is an incorrect solution to Exercise 1:</p>
+<div class="solution"><h5 id="solution_incorrect"><a href="/pub/enumeration.html#solution_incorrect">Solution &#40;Incorrect&#41;</a></h5>
+<p>There are <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span>: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn></mrow><annotation encoding="application/x-tex">15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12</mn></mrow><annotation encoding="application/x-tex">12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>24</mn></mrow><annotation encoding="application/x-tex">24</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">4</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>19</mn></mrow><annotation encoding="application/x-tex">19</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">9</span></span></span></span>, and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>×</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">3 \times 5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span>.</div>
+<p>In this solution, we have made all three mistakes. We have omitted many of the numbers &#40;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn></mrow><annotation encoding="application/x-tex">13</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>14</mn></mrow><annotation encoding="application/x-tex">14</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">4</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>16</mn></mrow><annotation encoding="application/x-tex">16</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">6</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>17</mn></mrow><annotation encoding="application/x-tex">17</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">7</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn></mrow><annotation encoding="application/x-tex">18</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">8</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>21</mn></mrow><annotation encoding="application/x-tex">21</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">1</span></span></span></span>&#41;; we have incorrectly counted <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>24</mn></mrow><annotation encoding="application/x-tex">24</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">4</span></span></span></span>, a false positive; and we have counted <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn></mrow><annotation encoding="application/x-tex">15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span> twice &#40;once as <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>×</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">3 \times 5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span>, which is a different name for <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn></mrow><annotation encoding="application/x-tex">15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span>&#41;. Even when we exhaustively list all the possibilities, we have to be careful not to make such errors.</p>
+<h3 id="strategy_systematic_search"><a href="/pub/enumeration.html#strategy_systematic_search">Strategy: Systematic Search</a></h3>
+<p>Note that in the correct solution to Exercise 1, we were able to avoid making errors because we wrote the whole numbers down in a consistent way and in order. This meant it was easy to check that we had not omitted any numbers, double-counted any numbers, or incorrectly included any false positives. This procedure of writing all the possibilities out in a consistent way and in order is called a <strong>systematic search</strong>. The three things to keep in mind when using this method are:</p>
+<ul>
+<li><p>We must search a domain that contains at least all relevant objects.</p>
+</li>
+<li><p>The domain should be ordered so that it is easy to check we have not omitted any objects.</p>
+</li>
+<li><p>Each element of the domain must be expressed in a canonical way so it is easy to check if we have any double counting.</p>
+</li>
+</ul>
+<p>Let us go back to Exercise 1. TK</p>
+<h2 id="the_fencepost_problem"><a href="/pub/enumeration.html#the_fencepost_problem">The Fencepost Problem</a></h2>
+<p>TK
+
+</div>
+<!-- CONTENT ENDS HERE -->
+  </main>
+
+  <footer>
+    <div class="copyright">
+      &copy; Fengyang Wang. Last modified: February 07, 2020. Website built with <a href="https://github.com/tlienart/JuDoc.jl">JuDoc.jl</a>.
+    </div>
+  </footer>
+    
+        
+
+
+
+    
+    
+        <script src="/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+
+    
+  </body>
+</html>
