@@ -1,4 +1,4 @@
-@def title = "Homework: Systematic Search"
+@def title = "Homework: Fencepost Problem"
 @def hasmath = true
 @def hascode = true
 
